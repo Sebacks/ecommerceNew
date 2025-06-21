@@ -1,18 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Atma:wght@300;400;500;600;700&family=Chewy&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 /*GENERALES*/
-*{
-    --background-color:#69351E;
-    --background-color-focus: #ffd592;
-    --white-color:#F5F5F5;
-    --cream-color:#FFD9A0;
-    --cream-claro-color:#FFDBC2;
-    --dark-chocolate-color:#350800;
-    --medium-chocolate-color:#5F3624;
-    --light-chocolate-color:#7D411D;
-    --orange-dark-color:#ED6A0B;
-    --orange-light-color:#F59E1C;
-    font-family: 'Inter', sans-serif;
-}
+    *{
+        --background-color:#69351E;
+        --background-color-focus: #ffd592;
+        --white-color:#F5F5F5;
+        --cream-color:#FFD9A0;
+        --cream-claro-color:#FFDBC2;
+        --dark-chocolate-color:#350800;
+        --medium-chocolate-color:#5F3624;
+        --light-chocolate-color:#7D411D;
+        --orange-dark-color:#ED6A0B;
+        --orange-light-color:#F59E1C;
+        font-family: 'Poppins', sans-serif;
+    }
 .input{
     height: 37px;
     border: 3px solid var(--background-color);
@@ -42,6 +43,9 @@
     text-transform: uppercase;
     letter-spacing: 1.5px;
     font-weight: 500;
+}
+.textoChiquito2{
+    font-size: 1.1rem;
 }
 .gradient-orange{
     background: linear-gradient(90deg, #FFCFAD 10%, var(--orange-dark-color) 100%);
@@ -454,27 +458,66 @@
     color: var(--dark-chocolate-color);
 }
 
+.btn-orange{
+    width: fit-content;
+    background-color: #ED6A0B;
+    color: var(--white-color);
+    padding: 5px 10px;
+    border-radius: 8px;
+}
+.locationCont{
+    width: 100%!important;
+    height: 100%!important;
+    max-width: 460px;
+    max-height: 480px;
+    min-height: 480px;
+    background: linear-gradient(180deg, #823B07 0%, var(--background-color) 100%);
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.canvasCont{
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+}
+.canvasCont>iframe{
+    border-radius: 8px 8px 0px 0px;
+}
+.contTextoLocation{
+    width: 100%;
+    padding-block: 20px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    border-radius: 0px 0px 8px 8px;
+}
+.contTextoLocation>div{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
 /*FIN CONTENT*/
 /*INICIO FOOTER*/
 .footer{
     background-color: var(--background-color);
     height: 250px;
     fill: var(--dark-chocolate-color);
-    background-image: url('../../assets/dripUpside.svg');
     background-size: 924px auto;
     background-repeat: repeat-x;
     display: flex;
     justify-content: center;
     align-items: end;
     padding-bottom: 4rem;
-}
-.rectangle{
-    height: 65px;
-    width: 100%;
-    background-color: #B87F5B;
+    margin-top: 50px!important;
 }
 .footer-brand{
     height: 70px!important;
+    filter: brightness(750%);
     width: auto;
 }
 .footer-brand:hover{
@@ -486,6 +529,7 @@
 }
 .icon-socialF{
     height: 42px;
+    filter: brightness(500%);
 }
 .social{
     padding-right: 1rem !important;

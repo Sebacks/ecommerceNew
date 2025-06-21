@@ -10,91 +10,18 @@
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 </head>
 <body class="container-fluid">
-    <div class="sideMenu " id="sideMenu">
-        <div class="sideMenuTitle">
-            <div></div>
-            <h2>Mi carrito</h2>
-            <div><div class="x-shape" onclick="cerrarSideMenu()"></div></div>
-        </div>
-        <div class="sideMenuMeals" id="sideMenuMeals">
-            <div class="sideMenuMealItem" id="1">
-                <div class="imgMealItem">
-                    <img src="../assets/choco.png" alt="">
-                </div>
-                <div class="sideMenuMealItemData">
-                    <div class="titleInfo">
-                        <span class="mealName">Chocolates Surtidos</span>
-                    </div>
-                    <div class="titleData">
-                        <div class="btnsTitleData">
-                            <button class="decrementSideMenu">-</button>
-                            <input class="inputSideMenu" type="number" value="1" min="1" readonly>
-                            <button class="incrementSideMenu">+</button>
-                        </div>
-                        <div class="priceTitleData">
-                            <span class="contPrice">1 x <span class="price">$200</span></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="sideMenuMealItem" id="2">
-                <div class="imgMealItem">
-                    <img src="../assets/choco.png" alt="">
-                </div>
-                <div class="sideMenuMealItemData">
-                    <div class="titleInfo">
-                        <span class="mealName">Chocolates Surtidos</span>
-                    </div>
-                    <div class="titleData">
-                        <div class="btnsTitleData">
-                            <button class="decrementSideMenu">-</button>
-                            <input class="inputSideMenu" type="number" value="1" min="1" readonly>
-                            <button class="incrementSideMenu">+</button>
-                        </div>
-                        <div class="priceTitleData">
-                            <span class="contPrice">1 x <span class="price">$200</span></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="sideMenuData" id="sideMenuData">
-            <div class="sideMenuDataInfo"></div>
-            <div class="sideMenuDataPrices">
-                <div>
-                    <span>Subtotal: </span><span id="subtotal"></span>
-                </div>
-                <div>
-                    <span>Iva: </span><span id="iva"></span>
-                </div>
-                <div class="separador">
-
-                </div>
-                <div>
-                    <span>Total: </span><span id="total"></span>
-                </div>
-            </div>
-            <div class="sideMenuDataButtons">
-                <button class="btn-pedido">Realizar Pedido</button>
-            </div>
-        </div>
-    </div>
-    <div class="oscurecer" id="oscuro">
-
-    </div>
     <div class="row header d-flex justify-content-center align-items-start">
         <nav class="navbar navbar-expand-lg navi" style="padding-block: 0">
             <div class="container-fluid d-flex align-content-center justify-content-between navbarBox">
-                <a href="../landing/index.html"><img class="navbar-brand" src="../assets/logoHarricks.png" alt="" height="auto" width="258px"></a>
+                <a href="../Landing/index.html"><img class="navbar-brand" src="../assets/logoHarricks.png" alt="" height="auto" width="258px"></a>
                 <button class="navbar-toggler" style="margin-right: 3rem" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse navbar-list" id="navbarNavAltMarkup" style="flex-grow: 0;">
-                    <div class="navbar-nav options d-flex justify-content-center align-items-center">
-                        <a class="nav-link opt mx-auto text-center current" href="../productos/productos.html">Productos</a>
+                    <div class="navbar-nav options pt-0 d-flex justify-content-center align-items-center">
+                        <a class="nav-link opt mx-auto text-center" href="../Products/productos.html">Productos</a>
                         <a class="nav-link opt mx-auto text-center" href="../about/about.html">Nosotros</a>
-                        <a class="nav-link opt mx-auto text-center" href="../contactenos/contacto.html">Contacto</a>
-                        <span class="nav-link opt mx-auto icon text-center d-flex flex-row align-items-center" id="cartIcon"><i class="fa-solid fa-cart-shopping"></i><span id="sizeCart">(2)</span></span>
+                        <a class="nav-link opt mx-auto icon text-center"><i class="fa-solid fa-cart-shopping"></i></a>
                         <a class="nav-link opt mx-auto icon text-center" href="../login/login.html"><i class="fa-solid fa-user"></i></a>
                     </div>
                 </div>
@@ -166,39 +93,59 @@
                 </div>
             </div>
         </div>
-        <div class="w-65 container-fluid mt-5" id="productos">
+        <div class="w-100 container-fluid mt-5 d-flex justify-content-center" id="productos">
             <div class="row py-3 d-flex align-items-center productCont">
-
                 <div class="col-12 col-sm-8 col-md-6 col-xl-5 col-xxl-3 d-flex justify-content-center singProduCont">
                     <div class="singProdu">
-                        <i class="fa-regular fa-heart icon-heart"></i>
-                        <img src="../assets/choco.png" alt="" width="100%" height="auto" style="max-height: 186px;">
-                        <div class="d-flex  flex-column text-Cont">
-                            <span class="nombreProdu">
-                                Surtido de chocolates
-                            </span>
-                            <span class="descriProdu">
-                                Sus chocolates favoritos en un mismo paquete
-                            </span>
+                        <div class="h-100 w-100 d-flex justify-content-center align-items-center" style="min-height: 375px;">
+                            <img src="../assets/choco.png" alt="" width="100%" height="auto" style="max-height: 360px;">
                         </div>
-                        <div class="d-flex gap-3 btn-Cont">
-                            <button class="btn-product">
-                                <span>Ver más</span>
-                            </button>
-                            <button class="btn-product" id="addCartProdu">
-                                <i class="fa-solid fa-cart-shopping"></i>
-                            </button>
+                        <div class="d-flex gap-3 btn-Cont btn-ContL">
+                            <span class="textoChiquito">Pecaditos</span>
+                            <span class="textoChiquito">250gr</span>
                         </div>
                     </div>
                 </div>
-
+                <div class="col-12 col-sm-8 col-md-6 col-xl-5 col-xxl-3 d-flex justify-content-center singProduCont">
+                    <div class="singProdu">
+                        <div class="h-100 w-100 d-flex justify-content-center align-items-center" style="min-height: 375px;">
+                            <img src="../assets/choco.png" alt="" width="100%" height="auto" style="max-height: 360px;">
+                        </div>
+                        <div class="d-flex gap-3 btn-Cont">
+                            <span class="textoChiquito">Pecaditos</span>
+                            <span class="textoChiquito">250gr</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-8 col-md-6 col-xl-5 col-xxl-3 d-flex justify-content-center singProduCont">
+                    <div class="singProdu">
+                        <div class="h-100 w-100 d-flex justify-content-center align-items-center" style="min-height: 375px;">
+                            <img src="../assets/choco.png" alt="" width="100%" height="auto" style="max-height: 360px;">
+                        </div>
+                        <div class="d-flex gap-3 btn-Cont btn-ContL">
+                            <span class="textoChiquito">Pecaditos</span>
+                            <span class="textoChiquito">250gr</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-8 col-md-6 col-xl-5 col-xxl-3 d-flex justify-content-center singProduCont">
+                    <div class="singProdu">
+                        <div class="h-100 w-100 d-flex justify-content-center align-items-center" style="min-height: 375px;">
+                            <img src="../assets/choco.png" alt="" width="100%" height="auto" style="max-height: 360px;">
+                        </div>
+                        <div class="d-flex gap-3 btn-Cont">
+                            <span class="textoChiquito">Pecaditos</span>
+                            <span class="textoChiquito">250gr</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
     <div class="row d-flex justify-content-center align-items-start" style="margin-top: 10rem!important;">
         <div class="rectangle"></div>
         <footer class="footer">
-            <div style="border-bottom: #350800 2px solid; width: 80%" class="d-flex pb-1 footer-content">
+            <div style="border-bottom: #FFDBC2 2px solid; width: 80%" class="d-flex pb-1 footer-content">
                 <img src="../assets/logoHarricks.png" alt="" class="footer-brand">
                 <div class="d-flex justify-content-center align-items-center social">
                     <a href="https://www.facebook.com/share/e4BcBaMrRXqqzCwQ/"><img src="../assets/facebook.webp" alt="" class="icon-socialF"></a>
