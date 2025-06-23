@@ -14,5 +14,4 @@
     * Movido todo a carpeta src (por si acaso instalamos docker)
 
 
-*Nota: Pienso instalar Slim (framework de php) para manejar el routing.*
 *Nota: Podemos usar docker xd*
