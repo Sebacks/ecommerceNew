@@ -1,5 +1,9 @@
 # Changelog
-
+## v0.31
+    *Vista About terminada
+    *Vista Productos casi terminada
+    *Hipervinculos entre paginas establecidos(temporal)
+    *TODO modales
 
 ## v0.3
     * Entidades restantes añadidas
