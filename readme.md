@@ -1,4 +1,8 @@
 # Changelog
+## v0.4
+    *Se reajustó el Core de MVC con la versión hecha por Sebas anteriormente
+    *Daño en área ahora cuenta con un multiplicador del 1.25% cuando hay lluvia ácida
+
 ## v0.32
     *Hice un modal 🤙
     *Algo de JS para las categorias

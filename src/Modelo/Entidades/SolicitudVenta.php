@@ -1,41 +1,151 @@
 <?php
 
-declare(strict_types=1);
-
-namespace Entidades;
-
 class SolicitudVenta
 {
-    public function __construct(
-        private int $id,
-        private string $descripcion,
-        private string $fecha,
-        private int $idUsuario,
-        private int $idLocalidad
-    ) {  $fecha = date("Y-m-d h:i:sa",strtotime($fecha));}
+    private $id, $fechaSolicitud, $fechaAprovacion, $estado, $envio, $tipoVenta, $urlComprobante, $idEnvio, $idCliente;
 
-    public function getId(): int
+    /**
+     * @return mixed
+     */
+    public function getId()
     {
         return $this->id;
     }
-    public function getIdUsuario(): int
+
+    /**
+     * @param mixed $id
+     */
+    public function setId($id): void
     {
-        return $this->idUsuario;
-    }
-    public function getIdLocalidad(): int
-    {
-        return $this->idLocalidad;
+        $this->id = $id;
     }
 
-
-    public function getData(): \stdClass
+    /**
+     * @return mixed
+     */
+    public function getFechaSolicitud()
     {
-        $obj = new \stdClass();
-        $obj->id = $this->id;
-        $obj->descripcion = $this->descripcion;
-        $obj->fecha = $this->fecha;
-        $obj->idUsuario = $this->idUsuario;
-        $obj->idLocalidad = $this->idLocalidad;
-        return $obj;
+        return $this->fechaSolicitud;
     }
+
+    /**
+     * @param mixed $fechaSolicitud
+     */
+    public function setFechaSolicitud($fechaSolicitud): void
+    {
+        $this->fechaSolicitud = $fechaSolicitud;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFechaAprovacion()
+    {
+        return $this->fechaAprovacion;
+    }
+
+    /**
+     * @param mixed $fechaAprovacion
+     */
+    public function setFechaAprovacion($fechaAprovacion): void
+    {
+        $this->fechaAprovacion = $fechaAprovacion;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getEstado()
+    {
+        return $this->estado;
+    }
+
+    /**
+     * @param mixed $estado
+     */
+    public function setEstado($estado): void
+    {
+        $this->estado = $estado;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getEnvio()
+    {
+        return $this->envio;
+    }
+
+    /**
+     * @param mixed $envio
+     */
+    public function setEnvio($envio): void
+    {
+        $this->envio = $envio;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTipoVenta()
+    {
+        return $this->tipoVenta;
+    }
+
+    /**
+     * @param mixed $tipoVenta
+     */
+    public function setTipoVenta($tipoVenta): void
+    {
+        $this->tipoVenta = $tipoVenta;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getUrlComprobante()
+    {
+        return $this->urlComprobante;
+    }
+
+    /**
+     * @param mixed $urlComprobante
+     */
+    public function setUrlComprobante($urlComprobante): void
+    {
+        $this->urlComprobante = $urlComprobante;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getIdEnvio()
+    {
+        return $this->idEnvio;
+    }
+
+    /**
+     * @param mixed $idEnvio
+     */
+    public function setIdEnvio($idEnvio): void
+    {
+        $this->idEnvio = $idEnvio;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getIdCliente()
+    {
+        return $this->idCliente;
+    }
+
+    /**
+     * @param mixed $idCliente
+     */
+    public function setIdCliente($idCliente): void
+    {
+        $this->idCliente = $idCliente;
+    }
+
 }

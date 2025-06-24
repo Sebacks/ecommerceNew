@@ -1,41 +1,71 @@
 <?php
 
-declare(strict_types=1);
-
-namespace Entidades;
-
 class Categoria
 {
-    public function __construct(
-        private int $id,
-        private string $nombre,
-        private string $descripcion,
-        private bool $estado
-    ) {}
+    private $id, $nombre, $descripcion, $estado;
 
-    // Getters y setters
-    public function getId(): int
+    /**
+     * @return mixed
+     */
+    public function getId()
     {
         return $this->id;
     }
 
-    public function getEstado(): bool
+    /**
+     * @param mixed $id
+     */
+    public function setId($id): void
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getNombre()
+    {
+        return $this->nombre;
+    }
+
+    /**
+     * @param mixed $nombre
+     */
+    public function setNombre($nombre): void
+    {
+        $this->nombre = $nombre;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDescripcion()
+    {
+        return $this->descripcion;
+    }
+
+    /**
+     * @param mixed $descripcion
+     */
+    public function setDescripcion($descripcion): void
+    {
+        $this->descripcion = $descripcion;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getEstado()
     {
         return $this->estado;
     }
 
-    public function setEstado(bool $estado)
+    /**
+     * @param mixed $estado
+     */
+    public function setEstado($estado): void
     {
         $this->estado = $estado;
     }
 
-    public function getData(): \stdClass
-    {
-        $obj = new \stdClass();
-        $obj->id = $this->id;
-        $obj->nombre = $this->nombre;
-        $obj->descripcion = $this->descripcion;
-        $obj->estado = $this->estado;
-        return $obj;
-    }
 }

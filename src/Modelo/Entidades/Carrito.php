@@ -1,39 +1,89 @@
 <?php
 
-declare(strict_types=1);
-
-namespace Entidades;
-
 class Carrito
 {
-    public function __construct(
-        private int $id,
-        private int $idUsuario,
-        private int $idProducto,
-        private int $cantidad
-    ) {}
+    private $id, $cantidad, $idUsuario, $idProducto, $estado;
 
-    public function getId(): int
+    /**
+     * @return mixed
+     */
+    public function getIdUsuario()
+    {
+        return $this->idUsuario;
+    }
+
+    /**
+     * @param mixed $idUsuario
+     */
+    public function setIdUsuario($idUsuario): void
+    {
+        $this->idUsuario = $idUsuario;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getId()
     {
         return $this->id;
     }
 
-    public function getIdUsuario(): int
+    /**
+     * @param mixed $id
+     */
+    public function setId($id): void
     {
-        return $this->idUsuario;
+        $this->id = $id;
     }
-    public function getIdProducto(): int
+
+    /**
+     * @return mixed
+     */
+    public function getCantidad()
+    {
+        return $this->cantidad;
+    }
+
+    /**
+     * @param mixed $cantidad
+     */
+    public function setCantidad($cantidad): void
+    {
+        $this->cantidad = $cantidad;
+    }
+
+
+    /**
+     * @return mixed
+     */
+    public function getIdProducto()
     {
         return $this->idProducto;
     }
 
-    public function getData(): \stdClass
+    /**
+     * @param mixed $idProducto
+     */
+    public function setIdProducto($idProducto): void
     {
-        $obj = new \stdClass();
-        $obj->id = $this->id;
-        $obj->idUsuario = $this->idUsuario;
-        $obj->idProducto = $this->idProducto;
-        $obj->cantidad = $this->cantidad;
-        return $obj;
+        $this->idProducto = $idProducto;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getEstado()
+    {
+        return $this->estado;
+    }
+
+    /**
+     * @param mixed $estado
+     */
+    public function setEstado($estado): void
+    {
+        $this->estado = $estado;
+    }
+
+
 }

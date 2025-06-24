@@ -1,30 +1,103 @@
 <?php
 
-declare(strict_types=1);
-
-namespace Entidades;
-
 class Envio
 {
-    public function __construct(
-        private int $id,
-        private int $estadoEnvio,
-        private string $fecha,
-        private int $idSolicitudVenta
-    ) {$fecha = date("Y-m-d h:i:sa",strtotime($fecha));}
+    private $id, $tipoEnvio, $cantidad, $coordenadasEnvio, $ubicacionEnvio, $estado;
 
-    public function getId(): int
+    /**
+     * @return mixed
+     */
+    public function getId()
     {
         return $this->id;
     }
 
-    public function getData(): \stdClass
+    /**
+     * @param mixed $id
+     */
+    public function setId($id): void
     {
-        $obj = new \stdClass();
-        $obj->id = $this->id;
-        $obj->estadoEnvio = $this->estadoEnvio;
-        $obj->fecha = $this->fecha;
-        $obj->idSolicitudVenta = $this->idSolicitudVenta;
-        return $obj;
+        $this->id = $id;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getTipoEnvio()
+    {
+        return $this->tipoEnvio;
+    }
+
+    /**
+     * @param mixed $tipoEnvio
+     */
+    public function setTipoEnvio($tipoEnvio): void
+    {
+        $this->tipoEnvio = $tipoEnvio;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCantidad()
+    {
+        return $this->cantidad;
+    }
+
+    /**
+     * @param mixed $cantidad
+     */
+    public function setCantidad($cantidad): void
+    {
+        $this->cantidad = $cantidad;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCoordenadasEnvio()
+    {
+        return $this->coordenadasEnvio;
+    }
+
+    /**
+     * @param mixed $coordenadasEnvio
+     */
+    public function setCoordenadasEnvio($coordenadasEnvio): void
+    {
+        $this->coordenadasEnvio = $coordenadasEnvio;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getUbicacionEnvio()
+    {
+        return $this->ubicacionEnvio;
+    }
+
+    /**
+     * @param mixed $ubicacionEnvio
+     */
+    public function setUbicacionEnvio($ubicacionEnvio): void
+    {
+        $this->ubicacionEnvio = $ubicacionEnvio;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getEstado()
+    {
+        return $this->estado;
+    }
+
+    /**
+     * @param mixed $estado
+     */
+    public function setEstado($estado): void
+    {
+        $this->estado = $estado;
+    }
+
 }

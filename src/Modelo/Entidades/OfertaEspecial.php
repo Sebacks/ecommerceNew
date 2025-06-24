@@ -1,47 +1,184 @@
 <?php
 
-declare(strict_types=1);
-
-namespace Entidades;
-
 class OfertaEspecial
 {
-    public function __construct(
-        private int $id,
-        private string $nombre,
-        private string $asunto,
-        private string $urlImgPromo,
-        private string $urlRedireccion,
-        private int $tipoOferta,
-        private float $porcentaje,
-        private float $precioCombo,
-        private string $fechaInicio,
-        private string $fechaFinal,
-        private int $idCategoria
-    ) {
-        $fechaInicio = date("Y-m-d h:i:sa",strtotime($fechaInicio));
-        $fechaFinal = date("Y-m-d h:i:sa",strtotime($fechaFinal));
-    }
+    private $id, $nombre, $razon, $urlImgCover, $urlImgTile, $tipoOferta, $tipoPublicidad, $idCategoria, $fechaInicio, $fechaFin, $precio;
 
-    public function getId(): int
+    /**
+     * @return mixed
+     */
+    public function getId()
     {
         return $this->id;
     }
 
-    public function getData(): \stdClass
+    /**
+     * @param mixed $id
+     */
+    public function setId($id): void
     {
-        $obj = new \stdClass();
-        $obj->id = $this->id;
-        $obj->nombre = $this->nombre;
-        $obj->asunto = $this->asunto;
-        $obj->urlImgPromo = $this->urlImgPromo;
-        $obj->urlRedireccion = $this->urlRedireccion;
-        $obj->tipoOferta = $this->tipoOferta;
-        $obj->porcentaje = $this->porcentaje;
-        $obj->precioCombo = $this->precioCombo;
-        $obj->fechaInicio = $this->fechaInicio;
-        $obj->fechaFinal = $this->fechaFinal;
-        $obj->idCategoria = $this->idCategoria;
-        return $obj;
+        $this->id = $id;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getNombre()
+    {
+        return $this->nombre;
+    }
+
+    /**
+     * @param mixed $nombre
+     */
+    public function setNombre($nombre): void
+    {
+        $this->nombre = $nombre;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getRazon()
+    {
+        return $this->razon;
+    }
+
+    /**
+     * @param mixed $razon
+     */
+    public function setRazon($razon): void
+    {
+        $this->razon = $razon;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getUrlImgCover()
+    {
+        return $this->urlImgCover;
+    }
+
+    /**
+     * @param mixed $urlImgCover
+     */
+    public function setUrlImgCover($urlImgCover): void
+    {
+        $this->urlImgCover = $urlImgCover;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getUrlImgTile()
+    {
+        return $this->urlImgTile;
+    }
+
+    /**
+     * @param mixed $urlImgTile
+     */
+    public function setUrlImgTile($urlImgTile): void
+    {
+        $this->urlImgTile = $urlImgTile;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTipoOferta()
+    {
+        return $this->tipoOferta;
+    }
+
+    /**
+     * @param mixed $tipoOferta
+     */
+    public function setTipoOferta($tipoOferta): void
+    {
+        $this->tipoOferta = $tipoOferta;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTipoPublicidad()
+    {
+        return $this->tipoPublicidad;
+    }
+
+    /**
+     * @param mixed $tipoPublicidad
+     */
+    public function setTipoPublicidad($tipoPublicidad): void
+    {
+        $this->tipoPublicidad = $tipoPublicidad;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getIdCategoria()
+    {
+        return $this->idCategoria;
+    }
+
+    /**
+     * @param mixed $idCategoria
+     */
+    public function setIdCategoria($idCategoria): void
+    {
+        $this->idCategoria = $idCategoria;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFechaInicio()
+    {
+        return $this->fechaInicio;
+    }
+
+    /**
+     * @param mixed $fechaInicio
+     */
+    public function setFechaInicio($fechaInicio): void
+    {
+        $this->fechaInicio = $fechaInicio;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFechaFin()
+    {
+        return $this->fechaFin;
+    }
+
+    /**
+     * @param mixed $fechaFin
+     */
+    public function setFechaFin($fechaFin): void
+    {
+        $this->fechaFin = $fechaFin;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPrecio()
+    {
+        return $this->precio;
+    }
+
+    /**
+     * @param mixed $precio
+     */
+    public function setPrecio($precio): void
+    {
+        $this->precio = $precio;
+    }
+
+
 }

@@ -1,8 +1,8 @@
 <?php
 
-class Localidad
+class TipoUsuario
 {
-    private $id, $nombre, $ubicacion, $estado;
+    private $id, $nombre, $estado;
 
     /**
      * @return mixed
@@ -34,22 +34,6 @@ class Localidad
     public function setNombre($nombre): void
     {
         $this->nombre = $nombre;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getUbicacion()
-    {
-        return $this->ubicacion;
-    }
-
-    /**
-     * @param mixed $ubicacion
-     */
-    public function setUbicacion($ubicacion): void
-    {
-        $this->ubicacion = $ubicacion;
     }
 
     /**

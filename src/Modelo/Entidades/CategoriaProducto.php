@@ -1,37 +1,55 @@
 <?php
 
-declare(strict_types=1);
-
-namespace Entidades;
-
 class CategoriaProducto
 {
-    public function __construct(
-        private int $id,
-        private int $idCategoria,
-        private int $idProducto
-    ) {}
+    private $id, $idCategoria, $idProducto;
 
-    // Getters
-    public function getId(): int
+    /**
+     * @return mixed
+     */
+    public function getId()
     {
         return $this->id;
     }
-    public function getIdCategoria(): int
+
+    /**
+     * @param mixed $id
+     */
+    public function setId($id): void
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getIdCategoria()
     {
         return $this->idCategoria;
     }
-    public function getIdProducto() : int
+
+    /**
+     * @param mixed $idCategoria
+     */
+    public function setIdCategoria($idCategoria): void
+    {
+        $this->idCategoria = $idCategoria;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getIdProducto()
     {
         return $this->idProducto;
     }
 
-    public function getData(): \stdClass
+    /**
+     * @param mixed $idProducto
+     */
+    public function setIdProducto($idProducto): void
     {
-        $obj = new \stdClass();
-        $obj->id = $this->id;
-        $obj->idCategoria = $this->idCategoria;
-        $obj->idProducto = $this->idProducto;
-        return $obj;
+        $this->idProducto = $idProducto;
     }
+
 }

@@ -1,35 +1,71 @@
 <?php
 
-declare(strict_types=1);
-
-namespace Entidades;
-
 class Credenciales
 {
-    public function __construct(
-        private int $id,
-        private string $pass,
-        private string $token,
-        private int $idUsuario
-    ) {}
+    private $id, $pass, $token, $idUsuario;
 
-    public function getId(): int
+    /**
+     * @return mixed
+     */
+    public function getId()
     {
         return $this->id;
     }
 
-    public function getIdUsuario(): int
+    /**
+     * @param mixed $id
+     */
+    public function setId($id): void
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPass()
+    {
+        return $this->pass;
+    }
+
+    /**
+     * @param mixed $pass
+     */
+    public function setPass($pass): void
+    {
+        $this->pass = $pass;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getToken()
+    {
+        return $this->token;
+    }
+
+    /**
+     * @param mixed $token
+     */
+    public function setToken($token): void
+    {
+        $this->token = $token;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getIdUsuario()
     {
         return $this->idUsuario;
     }
 
-    public function getData(): \stdClass
+    /**
+     * @param mixed $idUsuario
+     */
+    public function setIdUsuario($idUsuario): void
     {
-        $obj = new \stdClass();
-        $obj->id = $this->id;
-        $obj->pass = $this->pass;
-        $obj->token = $this->token;
-        $obj->idUsuario = $this->idUsuario;
-        return $obj;
+        $this->idUsuario = $idUsuario;
     }
+
 }

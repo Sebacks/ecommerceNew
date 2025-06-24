@@ -1,39 +1,71 @@
 <?php
 
-declare(strict_types=1);
-
-namespace Entidades;
-
 class VentaDetalle
 {
-    public function __construct(
-        private int $id,
-        private int $idSolicitudVenta,
-        private int $idProducto,
-        private int $cantidad
-    ) {}
+    private $id, $cantidad, $idVenta, $idProducto;
 
-    public function getId(): int
+    /**
+     * @return mixed
+     */
+    public function getId()
     {
         return $this->id;
     }
-    public function getIdSolicitudVenta(): int
+
+    /**
+     * @param mixed $id
+     */
+    public function setId($id): void
     {
-        return $this->idSolicitudVenta;
+        $this->id = $id;
     }
-    public function getIdProducto(): int
+
+    /**
+     * @return mixed
+     */
+    public function getCantidad()
+    {
+        return $this->cantidad;
+    }
+
+    /**
+     * @param mixed $cantidad
+     */
+    public function setCantidad($cantidad): void
+    {
+        $this->cantidad = $cantidad;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getIdVenta()
+    {
+        return $this->idVenta;
+    }
+
+    /**
+     * @param mixed $idVenta
+     */
+    public function setIdVenta($idVenta): void
+    {
+        $this->idVenta = $idVenta;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getIdProducto()
     {
         return $this->idProducto;
     }
 
-
-    public function getData(): \stdClass
+    /**
+     * @param mixed $idProducto
+     */
+    public function setIdProducto($idProducto): void
     {
-        $obj = new \stdClass();
-        $obj->id = $this->id;
-        $obj->idSolicitudVenta = $this->idSolicitudVenta;
-        $obj->idProducto = $this->idProducto;
-        $obj->cantidad = $this->cantidad;
-        return $obj;
+        $this->idProducto = $idProducto;
     }
+
 }

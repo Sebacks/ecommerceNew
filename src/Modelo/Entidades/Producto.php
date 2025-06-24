@@ -1,71 +1,183 @@
 <?php
 
-declare(strict_types=1);
-
-namespace Entidades;
-
 class Producto
 {
-    public function __construct(
-        private int $id,
-        private string $nombre,
-        private string $descripcion,
-        private string $urlImagen,
-        private int $precio,
-        private int $cantDisponible,
-        private string $fechaCreacion, 
-        private bool $estado,
-        private float $descuento,
-        private bool $hasDescuento,
-        private int $idLocalidad
-    ) {
-        //Se maneja asi por si acaso, para evitar errores con el tiempo.
-        $fechaCreacion = date("Y-m-d h:i:sa",strtotime($fechaCreacion));
+    private $id, $nombre, $descripcion, $urlImagen, $precio,$cantDisponible,$fechaCreacion,$estado,$idLocalidad,$descuento,$hasDescuento;
+
+    /**
+     * @return mixed
+     */
+    public function getHasDescuento()
+    {
+        return $this->hasDescuento;
     }
 
-    //getters y setters
-    public function getId() : int
+    /**
+     * @param mixed $hasDescuento
+     */
+    public function setHasDescuento($hasDescuento): void
     {
-        return $this->id;
-    }
-    public function getEstado() : bool
-    {
-        return $this->estado;
-    }
-    public function setEstado(bool $estado)
-    {
-        $this->estado = $estado;
-    }
-    public function getHasDescuento() : mixed
-    {
-            return $this->hasDescuento;       
-    }
-    //si HasDescuento que se definira es falso, se define el descuento actual como 0 tambien.
-    public function setHasDescuento(bool $hasDescuento)
-    {
-        if(!$hasDescuento)
-        {
-            $this->descuento = 0;
-
-        };
         $this->hasDescuento = $hasDescuento;
     }
 
-    public function getData() : \stdClass
+    /**
+     * @return mixed
+     */
+    public function getDescuento()
     {
-        $obj = new \stdClass();
-        $obj->id = $this->id;
-        $obj->nombre = $this->nombre;
-        $obj->descripcion = $this->descripcion;
-        $obj->urlImagen = $this->urlImagen;
-        $obj->precio = $this->precio;
-        $obj->cantDisponible = $this->cantDisponible;
-        $obj->fechaCreacion = $this->fechaCreacion;
-        $obj->estado = $this->estado;
-        $obj->descuento = $this->descuento;
-        $obj->hasDescuento = $this->hasDescuento;
-        $obj->idLocalidad = $this->idLocalidad;
-        return($obj);
+        return $this->descuento;
+    }
+
+    /**
+     * @param mixed $descuento
+     */
+    public function setDescuento($descuento): void
+    {
+        $this->descuento = $descuento;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getIdLocalidad()
+    {
+        return $this->idLocalidad;
+    }
+
+    /**
+     * @param mixed $idLocalidad
+     */
+    public function setIdLocalidad($idLocalidad): void
+    {
+        $this->idLocalidad = $idLocalidad;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getEstado()
+    {
+        return $this->estado;
+    }
+
+    /**
+     * @param mixed $estado
+     */
+    public function setEstado($estado): void
+    {
+        $this->estado = $estado;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFechaCreacion()
+    {
+        return $this->fechaCreacion;
+    }
+
+    /**
+     * @param mixed $fechaCreacion
+     */
+    public function setFechaCreacion($fechaCreacion): void
+    {
+        $this->fechaCreacion = $fechaCreacion;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCantDisponible()
+    {
+        return $this->cantDisponible;
+    }
+
+    /**
+     * @param mixed $cantDisponible
+     */
+    public function setCantDisponible($cantDisponible): void
+    {
+        $this->cantDisponible = $cantDisponible;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPrecio()
+    {
+        return $this->precio;
+    }
+
+    /**
+     * @param mixed $precio
+     */
+    public function setPrecio($precio): void
+    {
+        $this->precio = $precio;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getUrlImagen()
+    {
+        return $this->urlImagen;
+    }
+
+    /**
+     * @param mixed $urlImagen
+     */
+    public function setUrlImagen($urlImagen): void
+    {
+        $this->urlImagen = $urlImagen;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDescripcion()
+    {
+        return $this->descripcion;
+    }
+
+    /**
+     * @param mixed $descripcion
+     */
+    public function setDescripcion($descripcion): void
+    {
+        $this->descripcion = $descripcion;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getNombre()
+    {
+        return $this->nombre;
+    }
+
+    /**
+     * @param mixed $nombre
+     */
+    public function setNombre($nombre): void
+    {
+        $this->nombre = $nombre;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param mixed $id
+     */
+    public function setId($id): void
+    {
+        $this->id = $id;
     }
 
 }
