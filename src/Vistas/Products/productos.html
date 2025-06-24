@@ -31,6 +31,30 @@
             <span class="textoGrande gradient-brown">productos</span>
         </div>
     </div>
+    <div class="modal fade" id="modalAgregarProducto" tabindex="-1" aria-labelledby="modalAgregarProductoLabel">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="textTitleModal">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" style="padding-bottom: 15px;"><i class="fa-solid fa-x" style="width: 16px; height: 16px;"></i></button>
+                </div>
+                <div class="modal-body" id="textCenterModal">
+                    <div class="modalImage">
+                        <img src="../assets//choco.png" alt="">
+                    </div>
+                    <div class="modalText">
+                        <span class="modalProductName">Pecaditos</span>
+                        <span class="modalProductDesc">Arroz tostado recubierto de chocolate semiamargo del 121, bolsa de 250gr </span>
+                        <span class="modalProductPrice">CRC 3950</span>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-modalClose" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-modalAcept">Agregar al Carrito</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="row main d-flex justify-content-center">
         <div class="w-65 d-flex justify-content-between align-items-center filter-bar">
             <div class="d-flex justify-content-center align-items-center gap-4" id="categorias">
@@ -51,7 +75,7 @@
                 </div>
                 <div class="categoria d-flex justify-content-center align-items-center">
                     <span>
-                        Cacao
+                        Industrial
                     </span>
                 </div>
             </div>
@@ -94,91 +118,42 @@
             </div>
         </div>
         <div class="w-100 container-fluid mt-5 d-flex justify-content-center" id="productos">
-            <div class="row py-3 d-flex justify-content-center productCont">
-                <div class="col-12 col-sm-8 col-md-6 col-xl-5 col-xxl-3 d-flex justify-content-center singProduCont">
+            <div class="row py-3 d-flex justify-content-center productCont" id="contenedorProductosGeneral">
+                <div class="col-12 col-sm-8 col-md-6 col-xl-5 col-xxl-3 justify-content-center singProduCont" data-bs-toggle="modal" data-bs-target="#modalAgregarProducto">
+                    <span hidden>-Coberturas-</span>
                     <div class="singProdu">
+                        <input type="hidden" value="1" class="idProductoModal">
                         <div class="h-100 w-100 d-flex justify-content-center align-items-center" style="min-height: 375px;">
                             <img src="../assets/choco.png" alt="" width="100%" height="auto" style="max-height: 360px;">
                         </div>
                         <div class="d-flex gap-3 btn-Cont btn-ContL">
-                            <span class="textoChiquito">Pecaditos</span>
+                            <span class="textoChiquito">Bombones</span>
                             <span class="textoChiquito">250gr</span>
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-sm-8 col-md-6 col-xl-5 col-xxl-3 d-flex justify-content-center singProduCont">
+                <div class="col-12 col-sm-8 col-md-6 col-xl-5 col-xxl-3 justify-content-center singProduCont" data-bs-toggle="modal" data-bs-target="#modalAgregarProducto">
+                    <span hidden>-Cacao-</span>
                     <div class="singProdu">
-                        <div class="h-100 w-100 d-flex justify-content-center align-items-center" style="min-height: 375px;">
-                            <img src="../assets/choco.png" alt="" width="100%" height="auto" style="max-height: 360px;">
-                        </div>
-                        <div class="d-flex gap-3 btn-Cont">
-                            <span class="textoChiquito">Pecaditos</span>
-                            <span class="textoChiquito">250gr</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-8 col-md-6 col-xl-5 col-xxl-3 d-flex justify-content-center singProduCont">
-                    <div class="singProdu">
+                        <input type="hidden" value="2" class="idProductoModal">
                         <div class="h-100 w-100 d-flex justify-content-center align-items-center" style="min-height: 375px;">
                             <img src="../assets/choco.png" alt="" width="100%" height="auto" style="max-height: 360px;">
                         </div>
                         <div class="d-flex gap-3 btn-Cont btn-ContL">
-                            <span class="textoChiquito">Pecaditos</span>
+                            <span class="textoChiquito">Pecaditos1</span>
                             <span class="textoChiquito">250gr</span>
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-sm-8 col-md-6 col-xl-5 col-xxl-3 d-flex justify-content-center singProduCont">
+                <div class="col-12 col-sm-8 col-md-6 col-xl-5 col-xxl-3 justify-content-center singProduCont" data-bs-toggle="modal" data-bs-target="#modalAgregarProducto">
+                    <span hidden>-Cacao-Coberturas-</span>
                     <div class="singProdu">
-                        <div class="h-100 w-100 d-flex justify-content-center align-items-center" style="min-height: 375px;">
-                            <img src="../assets/choco.png" alt="" width="100%" height="auto" style="max-height: 360px;">
-                        </div>
-                        <div class="d-flex gap-3 btn-Cont">
-                            <span class="textoChiquito">Pecaditos</span>
-                            <span class="textoChiquito">250gr</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-8 col-md-6 col-xl-5 col-xxl-3 d-flex justify-content-center singProduCont">
-                    <div class="singProdu">
-                        <div class="h-100 w-100 d-flex justify-content-center align-items-center" style="min-height: 375px;">
-                            <img src="../assets/choco.png" alt="" width="100%" height="auto" style="max-height: 360px;">
-                        </div>
-                        <div class="d-flex gap-3 btn-Cont">
-                            <span class="textoChiquito">Pecaditos</span>
-                            <span class="textoChiquito">250gr</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-8 col-md-6 col-xl-5 col-xxl-3 d-flex justify-content-center singProduCont">
-                    <div class="singProdu">
+                        <input type="hidden" value="3" class="idProductoModal">
                         <div class="h-100 w-100 d-flex justify-content-center align-items-center" style="min-height: 375px;">
                             <img src="../assets/choco.png" alt="" width="100%" height="auto" style="max-height: 360px;">
                         </div>
                         <div class="d-flex gap-3 btn-Cont btn-ContL">
-                            <span class="textoChiquito">Pecaditos</span>
-                            <span class="textoChiquito">250gr</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-8 col-md-6 col-xl-5 col-xxl-3 d-flex justify-content-center singProduCont">
-                    <div class="singProdu">
-                        <div class="h-100 w-100 d-flex justify-content-center align-items-center" style="min-height: 375px;">
-                            <img src="../assets/choco.png" alt="" width="100%" height="auto" style="max-height: 360px;">
-                        </div>
-                        <div class="d-flex gap-3 btn-Cont">
-                            <span class="textoChiquito">Pecaditos</span>
-                            <span class="textoChiquito">250gr</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-8 col-md-6 col-xl-5 col-xxl-3 d-flex justify-content-center singProduCont">
-                    <div class="singProdu">
-                        <div class="h-100 w-100 d-flex justify-content-center align-items-center" style="min-height: 375px;">
-                            <img src="../assets/choco.png" alt="" width="100%" height="auto" style="max-height: 360px;">
-                        </div>
-                        <div class="d-flex gap-3 btn-Cont btn-ContL">
-                            <span class="textoChiquito">Pecaditos</span>
+                            <span class="textoChiquito">Pecaditos2</span>
                             <span class="textoChiquito">250gr</span>
                         </div>
                     </div>

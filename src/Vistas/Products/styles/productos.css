@@ -98,162 +98,85 @@
 }
 
 /*FIN GENERALES*/
-/*SIDE MENU*/
-.sideMenu{
-    overflow: hidden;
-    display: none;
-    flex-direction: column;
-    width: 520px;
-    height: 90vh;
-    position: fixed;
-    margin-top: calc(50vh - (90vh / 2))!important;
-    right: 0;
-    background-color: color-mix(in srgb, var(--light-chocolate-color) 90%, black 10%);
-    z-index: 5;
-    font-family: 'Montserrat', sans-serif;
+/*INICIO MODALES*/
+.modal-header{
+    background-color: #5F3624;
+    color: var(--white-color);
+}
+.modal{
+    background-color: #00000017;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.modal-dialog{
+    max-width: 900px!important;
+}
+.modal-content{
+    background-color: var(--cream-claro-color)!important;
+    height: 500px!important;
+    height: 100%;
+}
+.modalImage{
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background-color);
     border-radius: 16px;
-    justify-content: start;
-    --bs-gutter-x: 1.5rem;
-    --bs-gutter-y: 0;
-    margin-right: calc(-.5 * var(--bs-gutter-x));
-    margin-left: calc(-.5 * var(--bs-gutter-x));
 }
-.sideMenuTitle{
-    width: 100%;
-    display: flex;
-    height: 100px;
-    justify-content: center;
-    background-color: var(--dark-chocolate-color);
-    background-image: url("../../assets/texturaCacao.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    align-items: center;
-}
-
-.mealName{
-    font-size: 1.5rem;
-}
-.sideMenuTitle>h2{
-    color:var(--background-color)
-}
-.decrementSideMenu,.incrementSideMenu{
-    color: var(--white-color);
-    width: 35px;
-    height: 35px;
-    border: none;
-    background-color: var(--medium-chocolate-color);
-}
-.inputSideMenu{
-    color: var(--white-color);
-    background-color: var(--light-chocolate-color);
-    text-align: center;
-    width: 40px;
-    outline: none;
-    height: 35px;
-    border: none;
-}
-input[type=number] {
-    -moz-appearance: textfield;
-}
-.btnsTitleData{
-    display: flex;
-    gap: 3px;
-}
-.sideMenuData{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    color: var(--white-color);
-    font-size: 1.08rem;
-}
-.sideMenuDataPrices{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    gap: 0.4rem;
-    padding-inline: 30px;
-}
-.sideMenuDataPrices>div{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-}
-.separador{
-    border: 1px solid;
-    margin-block: 20px;
-    margin-top:40px
-}
-.sideMenuMeals{
-    min-height: 50%;
-    max-height: 50%;
-    width: 100%;
-    overflow-Y: scroll;
-    color: var(--white-color);
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: start;
-}
-.sideMenuMealItem{
-    display: flex;
-    width: 100%;
-    padding-right: 20px;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--light-chocolate-color)
-}
-.sideMenuMealItemData{
+.modalText{
+    width: 60%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 100%;
-    height: 130px;
-}
-.titleInfo{
-    display: flex;
-    justify-content: start;
+    align-items: center;
     padding-left: 20px;
-    align-items: start;
-    height: 50px;
+
 }
-.titleData{
+.modalProductName, .modalProductDesc, .modalProductPrice{
+    color: #350800;
+    text-align: center;
+}
+.modalProductName{
+    font-size: 30px;
+    font-weight: bold;
+}
+.modalProductDesc{
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+.modalImage>img{
+    width: 100%;
+    height: auto;    
+
+}
+.modal-body{
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-}
-.priceTitleData{
-    font-size: 1.1rem;
-}
-.imgMealItem>img{
-    width: auto;
-    height: 100px;
-
-}
-.sideMenuDataButtons{
-    margin-top: 50px;
-    display: flex;
     justify-content: center;
     align-items: center;
+    padding-inline: 30px!important;
 }
-.btn-pedido{
-    background-color: var(--dark-chocolate-color);
-    border: none;
-    color: var(--background-color);
-    width: 50%;
-    height: 50px;
-    border-radius: 8px;
+.modal-body>div{
+    height: 100%;
 }
-.imgMealItem{
-    height: 130px;
-    display: flex;
-    padding-inline: 20px;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--light-chocolate-color);
+.btn-close{
+    color: var(--white-color)!important;
+    background: none!important;
 }
-/*FIN SIDE MENU*/
+.btn-modalClose{
+    color: var(--white-color)!important;
+    background-color: var(--light-chocolate-color)!important;
+}
+.btn-modalAcept{
+    color: var(--white-color)!important;
+    background-color: var(--orange-light-color)!important;
+}
+.modal-footer{
+    background-color: #5F3624!important;
+}
+/*FIN MODALES*/
 /*INICIO NAVBAR*/
 .opt{
     height: fit-content;
@@ -402,9 +325,13 @@ input[type=number] {
     }
     .categoria:hover{
         cursor: pointer;
+        background-color: var(--cream-claro-color);
+    }
+    .selected{
         background-color: var(--background-color-focus);
     }
     .singProduCont{
+        display: flex;
         margin-bottom: 3rem;
         width: 444px!important;
     }
@@ -470,36 +397,12 @@ input[type=number] {
         transform: translateY(-50%);
         color: var(--dark-chocolate-color);
     }
-    .modal-content>div{
-        border: none;
-    }
-    .modal-header{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        color: var(--light-chocolate-color)!important;
-    }
-    .fa-x{
-        color: var(--light-chocolate-color)!important;
-    }
-    .modal-content{
-        background-color: var(--dark-chocolate-color) !important;
-    }
     .categoria-clear{
         border: 1px solid var(--light-chocolate-color);
         background-color: var(--white-color);
     }
     .btn-filtro{
         display: none;
-    }
-    .btn-modal-sec{
-        background-color: var(--background-color)!important;
-        color: var(--light-chocolate-color)!important;
-        border: 1px solid var(--light-chocolate-color)!important;
-    }
-    .btn-modal-prin{
-        background-color: var(--light-chocolate-color)!important;
-        color: var(--background-color)!important;
     }
     @media screen and (max-width: 1500px){
         .filter-bar{

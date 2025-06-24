@@ -1,4 +1,9 @@
 # Changelog
+## v0.32
+    *Hice un modal 🤙
+    *Algo de JS para las categorias
+    *TODO hacer los modales mas bonitos
+
 ## v0.31
     *Vista About terminada
     *Vista Productos casi terminada
