@@ -1,3 +1,5 @@
+<?php
+echo '
 <!doctype html>
 <html lang="es">
 <head>
@@ -571,3 +573,4 @@
 <script src="script/script.js"></script>
 </body>
 </html>
+'
