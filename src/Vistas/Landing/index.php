@@ -1,3 +1,5 @@
+<?php
+echo '
 <!doctype html>
 <html>
 <head>
@@ -29,7 +31,7 @@
     <div class="row d-flex justify-content-center align-items-center">
         <div class="col-12 col-md-5 d-flex gap-2 flex-column text-start order-md-1 order-2 textContainer" style="max-width: 740px">
             <span class="textoGrande gradient-orange" style="max-width: 740px">Bienvenidos a la casa del <span style="color: #ED6A0B">comelón</span></span>
-            <span class="textoChiquito" style="max-width: 585px; color: #FFDBC2">Prueba nuestros deliciosos productos seleccionados por el mismisimo <span style="color: #ED6A0B">comelón de harrick's</span></span>
+            <span class="textoChiquito" style="max-width: 585px; color: #FFDBC2">Prueba nuestros deliciosos productos seleccionados por el mismisimo <span style="color: #ED6A0B">comelón de harricks</span></span>
         </div>
         <div class="col-12 col-md-5  order-md-2 order-1 d-flex flex-row justify-content-center align-items-center comelonCont" style="position: relative">
             <img src="./Vistas/assets/comelon.png" alt="" class="comelon">
@@ -192,3 +194,4 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
+'
