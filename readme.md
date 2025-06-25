@@ -1,4 +1,9 @@
 # Changelog
+## v0.4.2
+    *Primer versión del código de la base de datos previo a las pruebas
+    *Algunas correciones en direccionamientos del Core. También, correciones en la vista del index
+    *Doom ejecutado en el core con éxito 
+
 ## v0.4.1
     *Se cambiaron los html por php
 ## v0.4.0
