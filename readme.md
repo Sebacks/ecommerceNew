@@ -1,4 +1,8 @@
 # Changelog
+## v0.4.3
+    *Dash de productos listo para adaptarlo a php
+    *inicio proceso dash categorias
+
 ## v0.4.1
     *Se cambiaron los html por php
 ## v0.4.0
