@@ -13,6 +13,6 @@ class IndexControlador
             $todos = array_slice($todos, -6);
         }
         */
-        require_once "./Vistas/Landing/index.html";
+        require_once "./Vistas/Landing/index.php";
     }
 }

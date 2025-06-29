@@ -1,5 +1,5 @@
-<?php
-echo '
+<?php?>
+
 <!doctype html>
 <html>
 <head>
@@ -118,7 +118,7 @@ echo '
                             <div class="w-100 cont-full justify-content-center d-flex">
                                 <div class="d-flex justify-content-center align-items-start flex-column">
                                     <span class="nombreProdu text-center">
-                                        Surtido de chocolates
+                                        Surtido de chocolates 
                                     </span>
                                 </div>
                             </div>
@@ -194,4 +194,4 @@ echo '
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
-'
+
