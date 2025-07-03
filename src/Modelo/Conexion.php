@@ -6,11 +6,12 @@ class Conexion
 
     function Ejecutar($query)
     {
-        $name="119320322";
-        $user="119320322";
-        $pass="No48!1wz5";
+        $servername ="localhost";
+        $user="root";
+        $pass="";
+        $dbname ="prueba_ecommerce";
 
-        if(!$this->mysqli=new mysqli('localhost',$user,$pass,$name))
+        if(!$this->mysqli=new mysqli($servername,$user,$pass,$dbname))
         {
             die('Error en conexion');
         }
