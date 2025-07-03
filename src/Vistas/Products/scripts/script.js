@@ -15,6 +15,8 @@ function actualizarTotales(){
         itemsStorage.forEach(e => {
             e.precio = e.precio.replace('CRC','')
             subtotal+=(parseInt(e.precio)*parseInt(e.cantidad))
+            var span = $('#'+e.id).find('.priceCont span')
+            span.text('CRC'+parseInt(e.precio)*parseInt(e.cantidad))
         })
     }
     total=subtotal+(subtotal*0.13)
@@ -23,11 +25,6 @@ function actualizarTotales(){
     $('#TotalCarritoSpan').text('CRC'+total);
 }
 
-/*document.querySelector('.btn-deleteCarrito').click(function(){
-    var idSel = $(this).find(".sideMenuMealItem");
-    var id = parseInt(idSel[0].value);
-    console.log(id)
-});*/
 
 function cargarCarrito(){
     var itemsStorage = JSON.parse(localStorage.getItem('carrito'))
@@ -197,7 +194,7 @@ $('.btnAgregarCarrito').click(function(){
     var precio = 870;
     var currentItem = new CartItem();
     var allItems = []
-    currentItem.nombre = "juan";
+    currentItem.nombre = idProdu;
     currentItem.cantidad = 1;
     currentItem.precio = "CRC"+precio;
     currentItem.urlImg = "../assets/chocolate.png";
@@ -244,23 +241,85 @@ $('.btnAgregarCarrito').click(function(){
     cargarCarrito();
 })
 
-$('.incrementSideMenu').click(function() {
-    console.log('sexo')
-    /*var sideMenuMealItem = $(this).closest('.sideMenuMealItem');
+
+
+$(document).on('click', '.incrementSideMenu', function() {
+    var sideMenuMealItem = $(this).closest('.sideMenuMealItem');
     var id = sideMenuMealItem.attr('id');
-    console.log(""+id)
-    console.log("-----mas--")
-    var input = $('#'+id).find(".inputSideMenu")
+    var input = $('#'+id).find(".inputSideMenu");
     let currentValue = parseInt(input[0].value);
-    input[0].value = currentValue + 1; // Incrementa el valor en 1*/
+    var id = sideMenuMealItem.attr('id');
+    var carrito = JSON.parse(localStorage.getItem('carrito'));
+    var carritoString = localStorage.getItem('carrito')
+    if(carritoString.indexOf('[')==-1){
+        if(currentValue <= 2){
+            input[0].value = currentValue + 1;
+            carrito.cantidad = currentValue + 1;
+        }
+    }else{
+        carrito.forEach(e=>{
+            if(e.id==id){
+                if(carrito.indexOf(e)>-1){
+                    if(currentValue <= 99){
+                        input[0].value = currentValue + 1;
+                        carrito[carrito.indexOf(e)].cantidad = currentValue + 1;
+                    }
+                }
+            }
+        })
+    }
+    localStorage.setItem('carrito', JSON.stringify(carrito))
+    actualizarTotales()
 });
-$(".decrementSideMenu").click(function() {
-    console.log('sexo')
-    /*var sideMenuMealItem = $(this).closest('.sideMenuMealItem');
+
+// Para los botones -
+$(document).on('click', '.decrementSideMenu', function() {
+    var sideMenuMealItem = $(this).closest('.sideMenuMealItem');
     var id = sideMenuMealItem.attr('id');
-    var input = $('#'+id).find(".inputSideMenu")
+    var input = $('#'+id).find(".inputSideMenu");
     let currentValue = parseInt(input[0].value);
-    if(input[0].value>=2){
-        input[0].value = currentValue - 1;
-    }*/
+    var id = sideMenuMealItem.attr('id');
+    var carrito = JSON.parse(localStorage.getItem('carrito'));
+     var carritoString = localStorage.getItem('carrito')
+    if(carritoString.indexOf('[')==-1){
+        if(currentValue >= 2){
+            input[0].value = currentValue - 1;
+            carrito.cantidad = currentValue - 1;
+        }
+    }else{
+        carrito.forEach(e=>{
+            if(e.id==id){
+                if(carrito.indexOf(e)>-1){
+                    if(currentValue >= 2){
+                        input[0].value = currentValue - 1;
+                        carrito[carrito.indexOf(e)].cantidad = currentValue - 1;
+                    }
+                }
+            }
+        })
+    }
+    
+    localStorage.setItem('carrito', JSON.stringify(carrito))
+    actualizarTotales()
+});
+$(document).on('click', '.btn-deleteCarrito', function() {
+    var sideMenuMealItem = $(this).closest('.sideMenuMealItem');
+    var id = sideMenuMealItem.attr('id');
+    var carrito = JSON.parse(localStorage.getItem('carrito'))
+    var carritoString = localStorage.getItem('carrito')
+    if(carritoString.indexOf('[')==-1){
+        if(carrito.id==id){
+            localStorage.clear();
+        }
+    }else{
+        carrito.forEach(e=>{
+            if(e.id==id){
+                if(carrito.indexOf(e)>-1){
+                    carrito.splice(carrito.indexOf(e),1);
+                }
+            }
+        })
+        localStorage.setItem('carrito', JSON.stringify(carrito))
+    }
+    cargarCarrito()
 });

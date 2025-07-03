@@ -1,10 +1,5 @@
 $(document).ready(function() {
     $('input').val("")
-    $('.link').click(function () {
-        var elementId = $(this).attr('id');
-        console.log(elementId);
-        window.location.replace("../" + elementId + "/index.html");
-    });
     let isExpanded = true;
     $("#circleCollapse").click(function () {
         $("#side-bar-Id").toggleClass("side-bar-peque");

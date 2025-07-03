@@ -1,14 +1,10 @@
 $(document).ready(function() {
     $('input').val("")
-    var radioTrue = document.getElementById("true");
-    var radioFalse = document.getElementById("false");
-    radioFalse.checked=true;
     $('.link').click(function () {
         var elementId = $(this).attr('id');
         console.log(elementId);
         window.location.replace("../" + elementId + "/index.html");
     });
-    let isExpanded = true;
     $("#circleCollapse").click(function () {
         $("#side-bar-Id").toggleClass("side-bar-peque");
     })
