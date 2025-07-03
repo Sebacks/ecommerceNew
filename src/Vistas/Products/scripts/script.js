@@ -25,7 +25,6 @@ function actualizarTotales(){
     $('#TotalCarritoSpan').text('CRC'+total);
 }
 
-
 function cargarCarrito(){
     var itemsStorage = JSON.parse(localStorage.getItem('carrito'))
     if(itemsStorage!=null){
@@ -169,6 +168,10 @@ $("#busquedaProductos").on("keyup", function () {
     var words=[]
     console.log(indices)
     for(var i=0; i<indices.length; i++){
+        /*Agarra la lista de palabras y las ordena para que independientemente del orden de clicks igual busque
+          Es decir si preciono 1 Categoria y 2 Cocoa
+          Igual se busca un producto que tenga 1 Cocoa 2 Categoria
+        */
         words.push(palabras.substring(indices[i],indices[i+1]).replace('-',''));
         words = words.sort()
     };
@@ -191,6 +194,7 @@ function CartItem(nombre, id, cantidad, precio, urlImg){
     this.urlImg=urlImg;
 }
 $('.btnAgregarCarrito').click(function(){
+    /*TODO reemplazar los valores quemados de las variables con valores obtenidos de la BD mediante el idProdu*/
     var precio = 870;
     var currentItem = new CartItem();
     var allItems = []
@@ -242,7 +246,7 @@ $('.btnAgregarCarrito').click(function(){
 })
 
 
-
+// Para los botones +
 $(document).on('click', '.incrementSideMenu', function() {
     var sideMenuMealItem = $(this).closest('.sideMenuMealItem');
     var id = sideMenuMealItem.attr('id');
@@ -302,6 +306,7 @@ $(document).on('click', '.decrementSideMenu', function() {
     localStorage.setItem('carrito', JSON.stringify(carrito))
     actualizarTotales()
 });
+
 $(document).on('click', '.btn-deleteCarrito', function() {
     var sideMenuMealItem = $(this).closest('.sideMenuMealItem');
     var id = sideMenuMealItem.attr('id');

@@ -1,13 +1,16 @@
 $(document).ready(function() {
     $('input').val("")
+
     $('.link').click(function () {
         var elementId = $(this).attr('id');
         console.log(elementId);
         window.location.replace("../" + elementId + "/index.html");
     });
+
     $("#circleCollapse").click(function () {
         $("#side-bar-Id").toggleClass("side-bar-peque");
     })
+
     $("#buscarProducto").on("keyup", function () {
         var value = $(this).val().toLowerCase();
         $("#tableProductos tr").filter(function () {
@@ -22,6 +25,8 @@ $(document).ready(function() {
     }
     slider.addEventListener('input', updateSliderBackground);
     updateSliderBackground(); // Llamada inicial para establecer el color al cargar
+
+    // Eventos para el boton de "Agregar Varios"
     $('#btnSwitchV').click(function (){
         $('#main-table').toggleClass("d-none");
         $('#add-productsV').toggleClass("d-none");
@@ -46,6 +51,8 @@ $(document).ready(function() {
         $('#btnSwitchV').toggleClass('btn-secondary');
         $('#btnSwitchV').text(text)
     })
+
+    // Eventos para el boton de "Agregar"
     $('#btnSwitchS').click(function (){
         $('#main-table').toggleClass("d-none");
         $('#add-products').toggleClass("d-none");
@@ -71,19 +78,24 @@ $(document).ready(function() {
         $('#btnSwitchS').toggleClass('btn-secondary');
         $('#btnSwitchS').text(text)
     })
+
     radioTrue.addEventListener("change", function() {
         if (radioTrue.checked) {
             $("#descuentoInputCont").removeClass('d-none');
         }
     });
+
     radioFalse.addEventListener("change", function() {
         if (radioFalse.checked) {
             $("#descuentoInputCont").addClass('d-none');
         }
     });
+
     $('#descuentoInput').on('input', function (){
         $('#porcentajeShow').text($('#descuentoInput').val()+"%")
     })
+    
+    /*Reemplaza la ventana actual cargando el producto seleccionado en el form de agregar*/
     $('.editBtn').click(function(event){
         var id = event.target.parentElement.parentElement.id
         $('#main-table').toggleClass("d-none");
