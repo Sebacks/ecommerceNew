@@ -1,4 +1,9 @@
 # Changelog
+## V0.4.4
+    *ME CAGO EN JS
+    *terminadas algunas funciones en JS
+    *Carrito medio funcional
+
 ## v0.4.4.1
     * La conexión a la bd sirve y se ajustó el controlador de Productos
     * Correción de controladores

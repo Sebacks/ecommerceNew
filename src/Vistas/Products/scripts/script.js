@@ -1,36 +1,90 @@
-/*$('#addCartProdu').click(function () {
-    document.getElementById('oscuro').style.display="block"
-    document.getElementById('oscuro').style.width="100vw"
-    $("#oscuro").click(()=>{
-        cerrarSideMenu()
-    })
-    $("#sideMenu").css('display','block')
-    $("#sideMenu").animate({width: '520px'});
-})
-function abrirSideMenu(){
+/*Sistema carrito*/
 
-}
-function cerrarSideMenu(){
-    $("#sideMenu").css('display','none')
-    $("#sideMenu").css('width','0px');
-    document.getElementById('oscuro').style.display="none"
-}
-$('.incrementSideMenu').on('click', function() {
-    var sideMenuMealItem = $(this).closest('.sideMenuMealItem');
-    var id = sideMenuMealItem.attr('id');
-    var input = $('#'+id).find(".inputSideMenu")
-    let currentValue = parseInt(input[0].value);
-    input[0].value = currentValue + 1; // Incrementa el valor en 1
-});
-$('.decrementSideMenu').click(function() {
-    var sideMenuMealItem = $(this).closest('.sideMenuMealItem');
-    var id = sideMenuMealItem.attr('id');
-    var input = $('#'+id).find(".inputSideMenu")
-    let currentValue = parseInt(input[0].value);
-    if(input[0].value>=2){
-        input[0].value = currentValue - 1;
+function actualizarTotales(){
+    var itemsStorage = JSON.parse(localStorage.getItem('carrito'))
+    var total = 0;
+    var subtotal = 0;
+    if(JSON.stringify(itemsStorage).indexOf('[')==-1){
+        itemsStorage.precio = itemsStorage.precio.replace('CRC','')
+        subtotal=(parseInt(itemsStorage.precio)*parseInt(itemsStorage.cantidad))
+        console.log(parseInt(itemsStorage.precio)*parseInt(itemsStorage.cantidad))
+        console.log(itemsStorage.precio)
+        console.log(itemsStorage.cantidad)
     }
+    else{
+        itemsStorage.forEach(e => {
+            e.precio = e.precio.replace('CRC','')
+            subtotal+=(parseInt(e.precio)*parseInt(e.cantidad))
+        })
+    }
+    total=subtotal+(subtotal*0.13)
+    total=Math.round(total)
+    $('#SubtotalCarritoSpan').text('CRC'+subtotal);
+    $('#TotalCarritoSpan').text('CRC'+total);
+}
+
+/*document.querySelector('.btn-deleteCarrito').click(function(){
+    var idSel = $(this).find(".sideMenuMealItem");
+    var id = parseInt(idSel[0].value);
+    console.log(id)
 });*/
+
+function cargarCarrito(){
+    var itemsStorage = JSON.parse(localStorage.getItem('carrito'))
+    if(itemsStorage!=null){
+        var html = ''
+        if(localStorage.getItem('carrito')==null)
+            html = ''
+        else if(localStorage.getItem('carrito').indexOf('[')==-1){
+            var itemsStorage = JSON.parse(localStorage.getItem('carrito'))
+            html = `<li class="sideMenuMealItem"id="`+itemsStorage.id+`">
+                    <div class="contLeft">
+                        <div class="contImg">
+                            <img src="`+itemsStorage.urlImg+`" alt="">
+                        </div>
+                        <div class="contName">
+                            <span>`+itemsStorage.nombre+`</span>
+                            <div>
+                                <button class="decrementSideMenu">-</button>
+                                <input type="number" class="inputSideMenu" value=`+itemsStorage.cantidad+`>
+                                <button class="incrementSideMenu">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="priceCont">
+                        <button type="button" class="btn-close btn-deleteCarrito text-reset mx-0" aria-label="Close"></button>
+                        <span>`+itemsStorage.precio+`</span>
+                    </div>
+                </li>`
+        }else{
+            var itemsStorage = JSON.parse(localStorage.getItem('carrito'))
+            itemsStorage.forEach(e => {
+                html+= `<li class="sideMenuMealItem"id="`+e.id+`">
+                    <div class="contLeft">
+                        <div class="contImg">
+                            <img src="`+e.urlImg+`" alt="">
+                        </div>
+                        <div class="contName">
+                            <span>`+e.nombre+`</span>
+                            <div>
+                                <button class="decrementSideMenu">-</button>
+                                <input type="number" class="inputSideMenu" value=`+e.cantidad+`>
+                                <button class="incrementSideMenu">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="priceCont">
+                        <button type="button" class="btn-close btn-deleteCarrito text-reset mx-0" aria-label="Close"></button>
+                        <span>`+e.precio+`</span>
+                    </div>
+                </li>`
+            });
+        }  
+        $('#listaCarritoID').html(html);
+        actualizarTotales()
+    }
+}
+
 
 /*Sistema de categorias*/
 var list = [];
@@ -122,13 +176,91 @@ $("#busquedaProductos").on("keyup", function () {
         words = words.sort()
     };
 });                 
-                            
+var idProdu=0;       
 /*Obtiene el id del producto seleccionado*/
 $('.singProdu').click(function(){
     var idSel = $(this).find(".idProductoModal");
     var id = parseInt(idSel[0].value);
+    idProdu = id;
     /*la var id es el id del producto seleccionado*/
     var modalText = document.getElementById('textTitleModal');
     modalText.innerHTML=id;
+});
+function CartItem(nombre, id, cantidad, precio, urlImg){
+    this.nombre=nombre;
+    this.id=id;
+    this.cantidad=cantidad;
+    this.precio=precio;
+    this.urlImg=urlImg;
+}
+$('.btnAgregarCarrito').click(function(){
+    var precio = 870;
+    var currentItem = new CartItem();
+    var allItems = []
+    currentItem.nombre = "juan";
+    currentItem.cantidad = 1;
+    currentItem.precio = "CRC"+precio;
+    currentItem.urlImg = "../assets/chocolate.png";
+    currentItem.id=idProdu;
+    if(localStorage.getItem('carrito')==null)
+        localStorage.setItem('carrito',JSON.stringify(currentItem))
+    else if(localStorage.getItem('carrito').indexOf('[')==-1){
+        var itemStorage = JSON.parse(localStorage.getItem('carrito'))
+        if(itemStorage.id==idProdu){
+            itemStorage.cantidad++;
+            localStorage.setItem('carrito',''+JSON.stringify(itemStorage))
+        }else{
+            allItems.push(currentItem)
+            allItems.push(itemStorage)
+            localStorage.setItem('carrito',JSON.stringify(allItems))
+        }
+        console.log('hp')
+    }else{
+        allItems=[]
+        var retVal = true
+        var itemsStorage = JSON.parse(localStorage.getItem('carrito'))
+        itemsStorage.forEach(e => {
+            if(e.id==idProdu){
+                e.cantidad++;
+                allItems.push(e);
+                retVal=false
+            }else{
+                allItems.push(e);
+            }
+        });
+        if(retVal){
+            allItems.push(currentItem)
+            
+        }else{
+            
+        }
+        console.log(allItems)
+        localStorage.setItem('carrito',JSON.stringify(allItems))
+    }   
+    $("#modalAgregarProducto").modal('hide')
+    var offcanvasElement = document.getElementById('modalCarrito');
+    var offcanvas = new bootstrap.Offcanvas(offcanvasElement);
+    offcanvas.show();
+    cargarCarrito();
 })
 
+$('.incrementSideMenu').click(function() {
+    console.log('sexo')
+    /*var sideMenuMealItem = $(this).closest('.sideMenuMealItem');
+    var id = sideMenuMealItem.attr('id');
+    console.log(""+id)
+    console.log("-----mas--")
+    var input = $('#'+id).find(".inputSideMenu")
+    let currentValue = parseInt(input[0].value);
+    input[0].value = currentValue + 1; // Incrementa el valor en 1*/
+});
+$(".decrementSideMenu").click(function() {
+    console.log('sexo')
+    /*var sideMenuMealItem = $(this).closest('.sideMenuMealItem');
+    var id = sideMenuMealItem.attr('id');
+    var input = $('#'+id).find(".inputSideMenu")
+    let currentValue = parseInt(input[0].value);
+    if(input[0].value>=2){
+        input[0].value = currentValue - 1;
+    }*/
+});

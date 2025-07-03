@@ -57,90 +57,26 @@
         </div>
         <div class="content">
             <div class="d-flex justify-content-between align-items-center flex-row" style="margin-bottom: 40px">
-                <span id="title-adminitracion">Administracion de Productos</span>
-                <div>
-                    <button class="btn btn-primary" style="width: 150px!important; height: 35px!important;padding:0!important;" id="btnSwitchV">Agregar Varios</button>
-                    <button class="btn btn-primary" style="width: 150px!important; height: 35px!important;padding:0!important;" id="btnSwitchS">Agregar</button>
-                </div>
-            </div>
-            <div class="add-products-cont d-none" id="add-productsV">
-                <form action="" class="h-100">
-                    <div class="d-flex justify-content-center flex-column align-items-center gap-3 h-100">
-                        <div>
-                            <label for="csvFile">Agregar productos desde archivo excel</label>
-                            <input type="file" class="form-control" name="csvFile" id="csvFile" accept=".csv" tabindex="3">
-                        </div>
-                        <button class="btn btn-primary" style="width: 332px" tabindex="9">Guardar</button>
-                    </div>
-                </form>
+                <span id="title-adminitracion">Administracion de Categorias</span>
+                <button class="btn btn-primary" style="width: 150px!important; height: 35px!important;padding:0!important;" id="btnSwitchS">Agregar</button>
             </div>
             <div class="add-products-cont d-none" id="add-products">
                 <form action="" class="h-100">
                     <div class="d-flex justify-content-center flex-column align-items-center gap-3 h-100">
                         <input type="hidden" name="id" id="idInput">
-                        <div class="d-flex flex-row gap-5 cont-half-form">
+                        <div class="d-flex flex-row gap-5 cont-half-form justify-content-center">
                             <div>
                                 <label for="nombreInput">Nombre</label>
                                 <input type="text" class="form-control" name="nombre" id="nombreInput" required tabindex="1" placeholder="cocoa">
                             </div>
-                            <div>
-                                <label for="cantidadInput">Cantidad Disponible</label>
-                                <input type="number" class="form-control" name="cantidadDisponible" id="cantidadInput" required tabindex="5" placeholder="0">
-                            </div>
-                            <div>
-                                <label>Categorias</label>
-                                <button class="btn btn-primary" type="button">Agregar Categorias</button>
-                            </div>
                         </div>
-                        <div class="d-flex flex-row gap-5 cont-half-form">
+                        <div class="d-flex flex-row gap-5 cont-half-form justify-content-center">
                             <div>
                                 <label for="descripcionInput">Descripcion</label>
                                 <textarea class="form-control" name="descripcion" id="descripcionInput" required tabindex="2"></textarea>
                             </div>
-                            <div>
-                                <label for="localidadInput">Localidad</label>
-                                <select class="form-control" name="localidad" id="localidadInput" tabindex="6" >
-                                    <option disabled value="-1" selected>Seleccione una opcion</option>
-                                    <option>x</option>
-                                    <option>x</option>
-                                    <option>x</option>
-                                </select>
-                            </div>
                         </div>
-                        <div class="d-flex flex-row gap-5 cont-half-form">
-                            <div>
-                                <label for="urlImagenInput">Imagen</label>
-                                <input type="file" class="form-control" name="urlImagen" id="urlImagenInput" accept="image/*" tabindex="3">
-                            </div>
-                            <div>
-                                <span>¿Tiene descuento?</span>
-                                <div class="d-flex justify-content-center flex-column">
-                                    <div class="d-flex flex-row-reverse align-items-center justify-content-end gap-1">
-                                        <label for="true">Si</label><br>
-                                        <input type="radio" id="true" name="hasDescuento" value="true" required tabindex="7">
-                                    </div>
-                                    <div class="d-flex flex-row-reverse align-items-center justify-content-end gap-1">
-                                        <label for="false">No</label><br>
-                                        <input type="radio" id="false" name="hasDescuento" value="false" required >
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="d-flex flex-row gap-5 cont-half-form">
-                            <div>
-                                <label for="precioInput">Precio de venta</label>
-                                <input type="number" class="form-control" name="precio" id="precioInput" required tabindex="4" placeholder="5500">
-                            </div>
-                            <div id="descuentoInputCont" class="d-none">
-                                <div class="d-flex justify-content-between">
-                                    <label for="descuentoInput">Descuento</label>
-                                    <span id="porcentajeShow"></span>
-                                </div>
-                                <input type="range" class="form-control" min="0" max="100" value="50" name="decuento" id="descuentoInput" tabindex="8" step="5">
-
-                            </div>
-                        </div>
-                        <div class="d-flex flex-row cont-half-form justify-content-end pt-4 mt-4">
+                        <div class="d-flex flex-row cont-half-form justify-content-center pt-4 mt-4">
                             <button class="btn btn-primary" style="width: 332px" tabindex="9">Guardar</button>
                         </div>
                     </div>
@@ -148,58 +84,37 @@
             </div>
             <div class="main-table-cont" id="main-table">
                 <div class="d-flex justify-content-end text-center pb-4" style="font-size: 1.2rem; ">
-                    <span style="margin: auto">Lista de productos</span>
+                    <span style="margin: auto">Lista de categorias</span>
                     <input type="text" class="form-control" placeholder="Buscar..." style="max-width: 350px!important" id="buscarProducto">
                 </div>
                 <div class="main-table">
                     <table class="table">
                         <thead>
                             <tr>
-                               <th scope="col" style="width:16.666666667%">Nombre</th>
-                               <th scope="col" style="width:16.666666667%">Descripcion</th>
-                               <th scope="col" style="width:16.666666667%">Precio</th>
-                               <th scope="col" style="width:16.666666667%"># Disponible</th>
-                               <th scope="col" style="width:16.666666667%">Fecha Creacion</th>
-                               <th scope="col" style="width:16.666666667%">Acciones</th>
+                               <th scope="col" style="width:auto">Nombre</th>
+                               <th scope="col" style="width:auto">Descripcion</th>
+                               <th scope="col" style="width:auto">Acciones</th>
                             </tr>
                         </thead>
                         <tbody id="tableProductos">
-                            <tr id="Cocoa natural 500gr">
+                            <tr id="Cocoa">
                                 <td>
-                                    <span>Cocoa natural 500gr</span>
+                                    <span>Cocoa</span>
                                 </td>
                                 <td>
-                                    <span>Deliciosa cobertura de chocolate preparada con la mejor calidad</span>
-                                </td>
-                                <td>
-                                    <span>CRC4700</span>
-                                </td>
-                                <td>
-                                    <span>6500<span> Unidades</span></span>
-                                </td>
-                                <td>
-                                    <span>20/10/2024</span>
+                                    <span>Productos en polvo para bebidas o para preparaciones de otros productos</span>
                                 </td>
                                 <td>
                                     <button class="btn btn-primary editBtn">Editar</button>
                                     <button class="btn btn-success activateBtn">Activar</button>
                                 </td>
                             </tr>
-                            <tr id="Cobertura de chocolate 70%">
+                            <tr id="Cobertura">
                                 <td>
-                                    <span>Cobertura de chocolate 70%</span>
+                                    <span>Coberturas</span>
                                 </td>
                                 <td>
-                                    <span>Deliciosa cobertura de chocolate preparada con la mejor calidad</span>
-                                </td>
-                                <td>
-                                    <span>CRC8800</span>
-                                </td>
-                                <td>
-                                    <span>6500<span> Unidades</span></span>
-                                </td>
-                                <td>
-                                    <span>20/10/2024</span>
+                                    <span>Productos creados para cubrir fresas, galletas, y demas</span>
                                 </td>
                                 <td>
                                     <button class="btn btn-primary editBtn">Editar</button>
@@ -219,8 +134,8 @@
                     <h1 class="modal-title fs-5" id="exampleModalLabel">Confirmacion</h1>
                 </div>
                 <div class="modal-body">
-                    <span>¿Esta seguro que desea desactivar el producto?</span>
-                    <span>Esta accion se puede revertir luego</span>
+                    <span>¿Esta seguro que desea desactivar la categoria?</span>
+                    <span class="text-center">Se desactivaran todos los productos dentro de esta categoria</span>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
