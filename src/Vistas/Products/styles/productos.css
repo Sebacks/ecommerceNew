@@ -100,8 +100,8 @@
 /*FIN GENERALES*/
 /*INICIO MODALES*/
 .modal-header{
-    background-color: #5F3624;
-    color: var(--white-color);
+    background-color: var(--cream-claro-color);
+    color: var(--background-color);
 }
 .modal{
     background-color: #00000017;
@@ -162,8 +162,7 @@
     height: 100%;
 }
 .btn-close{
-    color: var(--white-color)!important;
-    background: none!important;
+    color: var(--background-color)!important;
 }
 .btn-modalClose{
     color: var(--white-color)!important;
@@ -174,7 +173,131 @@
     background-color: var(--orange-light-color)!important;
 }
 .modal-footer{
-    background-color: #5F3624!important;
+    background-color: var(--cream-claro-color)!important;
+}
+.offcanvas{
+    background-color: var(--cream-color)!important;
+    width: 615px!important;
+    color: var(--dark-chocolate-color)!important;
+}
+.offcanvas-header{
+    justify-content: start;
+    padding-left: auto;
+    gap: 30px;
+}
+.offcanvas.offcanvas-end{ 
+    top: 5%!important;
+    bottom: 5%!important;
+    border-radius: 8px 0px 0px 8px;
+}
+.offcanvas-body{
+    padding: 47px!important;
+}
+.listaCarrito{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: 400px;
+    overflow-y: scroll;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.sideMenuMealItem{
+    padding-right: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+.contImg{
+    background-color: #ffebd5;
+    padding: 10px;
+    border-radius: 8px;
+}
+.contImg>img{
+    max-height: 120px;
+}
+.contName{
+    padding-block: 10px;
+    min-height: 100%;
+    height: 120px;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    flex-direction: column;
+}
+.incrementSideMenu,.decrementSideMenu{
+    font-size: 30px!important;
+    color: #5F3624!important;
+    padding: none!important;
+    background: none!important;
+    border: none;
+    text-decoration: none;
+}
+.incrementSideMenu,.decrementSideMenu:hover
+.incrementSideMenu,.decrementSideMenu:focus{
+    outline: none;
+    background: none!important;
+    border: none;
+    text-decoration: none;
+}
+
+.contLeft{
+    gap: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+.inputSideMenu{
+    text-align: center;
+    max-width: 30px;
+    background: none;
+    outline: none;
+    border: none;
+    border-bottom: solid 2px var(--light-chocolate-color);
+}
+.divider{
+    border-bottom: solid 1px #000;
+}
+.abajoCarrito{
+    padding-top: 40px;
+    flex-direction: column;
+}
+.abajoCarrito>div{
+    display: flex;
+    justify-content: space-between;
+}
+.priceCont{
+    min-height: 100%;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: space-between;
+}
+.subtotalCarrito{
+    font-size: 20px;
+}
+.totalCarrito{
+    font-size: 25px;
+    font-weight: bold;
+}
+.btnCont{
+    justify-content: center!important;
+}
+.btnComprar{
+    width: 100%;
+    background-color: var(--orange-dark-color);
+    padding: 16px;
+    color: var(--white-color);
+    border: none;
+    outline: none;
 }
 /*FIN MODALES*/
 /*INICIO NAVBAR*/

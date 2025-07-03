@@ -1,4 +1,9 @@
 # Changelog
+## V0.4.4
+    *ME CAGO EN JS
+    *terminadas algunas funciones en JS
+    *Carrito medio funcional
+
 ## v0.4.3
     *Dash de productos listo para adaptarlo a php
     *inicio proceso dash categorias

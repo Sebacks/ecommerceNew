@@ -1,5 +1,4 @@
-<?php
-?>
+
 <!doctype html>
 <html>
 <head>
@@ -33,6 +32,49 @@
             <span class="textoGrande gradient-brown">productos</span>
         </div>
     </div>
+    <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="modalCarrito" aria-labelledby="modalCarrito">
+        <div class="offcanvas-header d-flex">
+            <button type="button" class="btn-close text-reset mx-0" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            <h3 class="offcanvas-title" id="offcanvasExampleLabel">Carrito</h3>
+        </div>
+        <div class="offcanvas-body">
+           <ul class="listaCarrito" id="listaCarritoID">
+                <li class="sideMenuMealItem" id="1">
+                    <div class="contLeft">
+                        <div class="contImg">
+                            <img src="../assets/choco.png" alt="">
+                        </div>
+                        <div class="contName">
+                            <span>Pecaditos 250gr</span>
+                            <div>
+                                <button class="decrementSideMenu">-</button>
+                                <input type="number" class="inputSideMenu">
+                                <button class="incrementSideMenu">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="priceCont">
+                        <button type="button" class="btn-close text-reset mx-0" aria-label="Close"></button>
+                        <span>CRC3950</span>
+                    </div>
+                </li>
+           </ul>
+           <div class="abajoCarrito d-flex gap-2">
+                <div class="subtotalCarrito">
+                    <span>Subtotal:</span>
+                    <span id="SubtotalCarritoSpan">CRC3950</span>
+                </div>
+                <div class="divider"></div>
+                <div class="totalCarrito">
+                    <span>Total:</span>
+                    <span id="TotalCarritoSpan">CRC3950</span>
+                </div>
+                <div class="btnCont mt-4">
+                    <button class="btnComprar">Comprar</button>
+                </div>
+           </div>
+        </div>
+    </div>
     <div class="modal fade" id="modalAgregarProducto" tabindex="-1" aria-labelledby="modalAgregarProductoLabel">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
@@ -52,7 +94,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-modalClose" data-bs-dismiss="modal">Cerrar</button>
-                    <button type="button" class="btn btn-modalAcept">Agregar al Carrito</button>
+                    <button type="button" class="btn btn-modalAcept btnAgregarCarrito">Agregar al Carrito</button>
                 </div>
             </div>
         </div>
@@ -176,6 +218,7 @@
             </div>
         </footer>
     </div>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://kit.fontawesome.com/491d7a6bcc.js" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 <script src="scripts/script.js"></script>
