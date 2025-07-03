@@ -30,9 +30,7 @@
             </span>
         <li class="side-bar-item selected-item link" id="Productos">
             <i class="fa-solid fa-boxes-stacked"></i>
-            <a href="">
-                <span >Productos</span>
-            </a>
+            <span >Productos</span>
         </li>
         <li class="side-bar-item link" id="Categorias">
             <i class="fa-solid fa-list"></i>

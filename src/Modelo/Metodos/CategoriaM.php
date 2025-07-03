@@ -29,12 +29,11 @@ class CategoriaM
 
         return $todos;
     }
-    function Desactivar(Categoria $e)
+    function Activar(Categoria $e)
     {
-        $e->estado=0;
         $retVal=false;
         $conexion = new Conexion();
-        $sql="UPDATE CATEGORIA SET ESTADO='".$e->estado."' WHERE ID='".$e->getId()."'";
+        $sql="UPDATE CATEGORIA SET ESTADO='".$e->getEstado()."' WHERE ID='".$e->getId()."'";
         if($conexion->Ejecutar($sql))
             $retVal=true;
         $conexion->Cerrar();
@@ -49,17 +48,17 @@ class CategoriaM
             $sql="INSERT INTO CATEGORIA("
                 ." NOMBRE,"
                 ." DESCRIPCION,"
-                ." ESTADO,)"
+                ." ESTADO)"
                 ." VALUES ("
                 ."'".$e->getNombre()."',"
                 ."'".$e->getDescripcion()."',"
-                ."'".$e->getEstado()."',";
+                ."'".$e->getEstado()."')";
         }
         else{
-            $sql="UPDATE CATEGORIA SET NOMBRE='".$e->getEstado().
+            $sql="UPDATE CATEGORIA SET NOMBRE='".$e->getNombre().
                 "', DESCRIPCION='".$e->getDescripcion().
                 "', ESTADO='".$e->getEstado().
-                "' WHERE ID='".$e->getId()."'";
+                "' WHERE ID=".$e->getId()."";
         }
         if($conexion->Ejecutar($sql))
             $retVal=true;

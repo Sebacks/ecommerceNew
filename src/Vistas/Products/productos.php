@@ -15,7 +15,7 @@
     <div class="row header d-flex justify-content-center align-items-start">
         <nav class="navbar navbar-expand-lg navi" style="padding-block: 0">
             <div class="container-fluid d-flex align-content-center justify-content-between navbarBox">
-                <a href="../Landing/index.html"><img class="navbar-brand" src="../assets/logoHarricks.png" alt="" height="auto" width="258px"></a>
+                <a href="../Landing/index.html"><img class="navbar-brand" src="Vistas/assets/logoHarricks.png" alt="" height="auto" width="258px"></a>
                 <button class="navbar-toggler" style="margin-right: 3rem" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -85,7 +85,7 @@
                 </div>
                 <div class="modal-body" id="textCenterModal">
                     <div class="modalImage">
-                        <img src="../assets//choco.png" alt="">
+                        <img src="Vistas/assets/choco.png" alt="">
                     </div>
                     <div class="modalText">
                         <span class="modalProductName">Pecaditos</span>
@@ -169,7 +169,7 @@
                     <div class="singProdu">
                         <input type="hidden" value="1" class="idProductoModal">
                         <div class="h-100 w-100 d-flex justify-content-center align-items-center" style="min-height: 375px;">
-                            <img src="../assets/choco.png" alt="" width="100%" height="auto" style="max-height: 360px;">
+                            <img src="Vistas/assets/choco.png" alt="" width="100%" height="auto" style="max-height: 360px;">
                         </div>
                         <div class="d-flex gap-3 btn-Cont btn-ContL">
                             <span class="textoChiquito">Bombones</span>
@@ -182,7 +182,7 @@
                     <div class="singProdu">
                         <input type="hidden" value="2" class="idProductoModal">
                         <div class="h-100 w-100 d-flex justify-content-center align-items-center" style="min-height: 375px;">
-                            <img src="../assets/choco.png" alt="" width="100%" height="auto" style="max-height: 360px;">
+                            <img src="Vistas/assets/choco.png" alt="" width="100%" height="auto" style="max-height: 360px;">
                         </div>
                         <div class="d-flex gap-3 btn-Cont btn-ContL">
                             <span class="textoChiquito">Pecaditos1</span>
@@ -195,7 +195,7 @@
                     <div class="singProdu">
                         <input type="hidden" value="3" class="idProductoModal">
                         <div class="h-100 w-100 d-flex justify-content-center align-items-center" style="min-height: 375px;">
-                            <img src="../assets/choco.png" alt="" width="100%" height="auto" style="max-height: 360px;">
+                            <img src="Vistas/assets/choco.png" alt="" width="100%" height="auto" style="max-height: 360px;">
                         </div>
                         <div class="d-flex gap-3 btn-Cont btn-ContL">
                             <span class="textoChiquito">Pecaditos2</span>

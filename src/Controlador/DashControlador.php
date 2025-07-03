@@ -27,7 +27,14 @@ class DashControlador
 
     function Index()
     {
-        //$this->ProductosDash();
-        $this->CategoriasDash();
+        if (false)
+        {
+            $this->ProductosDash();
+        }
+        else
+        {
+            $this->CategoriasDash();
+
+        }
     }
 }

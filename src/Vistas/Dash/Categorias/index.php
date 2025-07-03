@@ -61,7 +61,7 @@
                 <button class="btn btn-primary" style="width: 150px!important; height: 35px!important;padding:0!important;" id="btnSwitchS">Agregar</button>
             </div>
             <div class="add-products-cont d-none" id="add-products">
-                <form action="" class="h-100">
+                <form action="./index.php?c=Categorias&a=Crear" method="post" class="h-100">
                     <div class="d-flex justify-content-center flex-column align-items-center gap-3 h-100">
                         <input type="hidden" name="id" id="idInput">
                         <div class="d-flex flex-row gap-5 cont-half-form justify-content-center">
@@ -97,30 +97,35 @@
                             </tr>
                         </thead>
                         <tbody id="tableProductos">
-                            <tr id="Cocoa">
+                            <?php
+                            foreach ($todosCat as $cat)
+                            { ?>
+                                <tr id="<?php echo $cat->getId()?>">
                                 <td>
-                                    <span>Cocoa</span>
+                                    <span><?php echo $cat->getNombre()?></span>
                                 </td>
                                 <td>
-                                    <span>Productos en polvo para bebidas o para preparaciones de otros productos</span>
-                                </td>
-                                <td>
-                                    <button class="btn btn-primary editBtn">Editar</button>
-                                    <button class="btn btn-success activateBtn">Activar</button>
-                                </td>
-                            </tr>
-                            <tr id="Cobertura">
-                                <td>
-                                    <span>Coberturas</span>
-                                </td>
-                                <td>
-                                    <span>Productos creados para cubrir fresas, galletas, y demas</span>
+                                    <span><?php echo $cat->getDescripcion()?></span>
                                 </td>
                                 <td>
                                     <button class="btn btn-primary editBtn">Editar</button>
-                                    <button class="btn btn-danger deactivateBtn" data-bs-toggle="modal" data-bs-target="#desactivarProductoModal">Desactivar</button>
-                                </td>
-                            </tr>
+                                    <?php
+                                    if ($cat->getEstado())
+                                    { 
+                                    ?>
+                                        <button class="btn btn-danger deactivateBtn" data-bs-toggle="modal" data-bs-target="#desactivarProductoModal">Desactivar</button>
+                                    <?php
+                                    }
+                                    else
+                                    {?>
+                                        <button class="btn btn-success activateBtn" data-bs-toggle="modal" data-bs-target="#desactivarProductoModal">Activar</button>
+                                    <?php
+                                    }?>
+                                    </td>
+                                </tr>
+                            <?php
+                            }
+                            ?>
                         </tbody>
                     </table>
                 </div>
@@ -134,12 +139,15 @@
                     <h1 class="modal-title fs-5" id="exampleModalLabel">Confirmacion</h1>
                 </div>
                 <div class="modal-body">
-                    <span>¿Esta seguro que desea desactivar la categoria?</span>
-                    <span class="text-center">Se desactivaran todos los productos dentro de esta categoria</span>
+                    
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-primary">Confirmar</button>
+                    <form action="./index.php?c=Categorias&a=Activar" method="post">
+                        <input type="hidden" name="id" id="idInputModal">
+                        <input type="hidden" name="estado" id="estadoInputModal">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-primary">Confirmar</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -149,6 +157,6 @@
 </div>
 <script src="https://kit.fontawesome.com/491d7a6bcc.js" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-<script src="Vistas/Dash/Categorias/script/script.js"></script>
+<script src="./Vistas/Dash/Categorias/script/script.js"></script>
 </body>
 </html>

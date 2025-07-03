@@ -1,13 +1,19 @@
 # Changelog
-## V0.4.4
-    *ME CAGO EN JS
-    *terminadas algunas funciones en JS
-    *Carrito medio funcional
+## v0.4.5
+    * Se completó el crud de Categoría
+    * Se realizaron cambios en CategoriaM y en CategoriaControlador
+    * Correción de vistas y scripts
+    * Se removió el <script> alert(':3') </script> de forma parcial
 
 ## v0.4.4.1
     * La conexión a la bd sirve y se ajustó el controlador de Productos
     * Correción de controladores
     * Se añadió el <script> alert(':3') </script>
+
+## V0.4.4
+    *ME CAGO EN JS
+    *terminadas algunas funciones en JS
+    *Carrito medio funcional
 
 ## v0.4.3
     *Dash de productos listo para adaptarlo a php
