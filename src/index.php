@@ -1,6 +1,7 @@
 <?php
     require_once 'Core/RutaFija.php';
     require_once 'Core/Rutas.php';
+    $es_POST = false;
 
     $ruta=new Rutas();
 

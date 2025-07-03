@@ -4,6 +4,11 @@
     *terminadas algunas funciones en JS
     *Carrito medio funcional
 
+## v0.4.4.1
+    * La conexión a la bd sirve y se ajustó el controlador de Productos
+    * Correción de controladores
+    * Se añadió el <script> alert(':3') </script>
+
 ## v0.4.3
     *Dash de productos listo para adaptarlo a php
     *inicio proceso dash categorias

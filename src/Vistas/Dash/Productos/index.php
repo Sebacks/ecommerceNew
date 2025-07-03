@@ -7,8 +7,8 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="styles/mainStyleDash.css">
-    <link rel="icon" type="image/x-icon" href="../../assets/icon.png">
+    <link rel="stylesheet" href="Vistas/Dash/Productos/styles/mainStyleDash.css">
+    <link rel="icon" type="image/x-icon" href="Vistas/assets/icon.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
     <title>Dashboard</title>
@@ -17,7 +17,7 @@
 <div class="d-flex flex-row" style="flex-wrap: nowrap!important; padding: 0">
     <ul class="d-flex flex-column justify-content-start align-items-center side-bar" style="max-width: 224px; min-height: 100vh; margin: 0; transition: width 2s;" id="side-bar-Id">
         <a href="" class="side-bar-brand">
-            <img src="../../assets/logoHarricks.png" alt="" style="max-width: 100%">
+            <img src="Vistas/assets/logoHarricks.png" alt="" style="max-width: 100%">
         </a>
         <hr class="divider">
         <li class="side-bar-item link" id="Index">
@@ -30,7 +30,9 @@
             </span>
         <li class="side-bar-item selected-item link" id="Productos">
             <i class="fa-solid fa-boxes-stacked"></i>
-            <span >Productos</span>
+            <a href="">
+                <span >Productos</span>
+            </a>
         </li>
         <li class="side-bar-item link" id="Categorias">
             <i class="fa-solid fa-list"></i>
@@ -75,7 +77,7 @@
                 </form>
             </div>
             <div class="add-products-cont d-none" id="add-products">
-                <form action="" class="h-100">
+                <form action="./index.php?c=Productos&a=Prueba" method="post" class="h-100">
                     <div class="d-flex justify-content-center flex-column align-items-center gap-3 h-100">
                         <input type="hidden" name="id" id="idInput">
                         <div class="d-flex flex-row gap-5 cont-half-form">
@@ -136,12 +138,12 @@
                                     <label for="descuentoInput">Descuento</label>
                                     <span id="porcentajeShow"></span>
                                 </div>
-                                <input type="range" class="form-control" min="0" max="100" value="50" name="decuento" id="descuentoInput" tabindex="8" step="5">
+                                <input type="range" class="form-control" min="0" max="100" value="50" name="descuento" id="descuentoInput" tabindex="8" step="5">
 
                             </div>
                         </div>
                         <div class="d-flex flex-row cont-half-form justify-content-end pt-4 mt-4">
-                            <button class="btn btn-primary" style="width: 332px" tabindex="9">Guardar</button>
+                            <button type="submit" class="btn btn-primary" style="width: 332px" tabindex="9">Guardar</button>
                         </div>
                     </div>
                 </form>
@@ -234,6 +236,6 @@
 </div>
 <script src="https://kit.fontawesome.com/491d7a6bcc.js" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-<script src="script/script.js"></script>
+<script src="Vistas/Dash/Productos/script/script.js"></script>
 </body>
 </html>
