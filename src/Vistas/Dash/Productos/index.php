@@ -8,6 +8,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="Vistas/Dash/Productos/styles/mainStyleDash.css">
+    <link rel="stylesheet" href="./styles/mainStyleDash.css">
     <link rel="icon" type="image/x-icon" href="Vistas/assets/icon.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
@@ -15,6 +16,56 @@
 </head>
 <body class="">
 <div class="d-flex flex-row" style="flex-wrap: nowrap!important; padding: 0">
+     <div class="modal fade" id="modalAgregarCategoria" tabindex="-1" aria-labelledby="modalAgregarCategoria">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header d-flex justify-content-between">
+                    <h5 class="modal-title" id="textTitleModal">Agregar Categorias</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" style="padding-bottom: 15px;"><i class="fa-solid fa-x" style="width: 16px; height: 16px;"></i></button>
+                </div>
+                <div class="modal-body" id="textCenterModal">
+                    <div class="modalText w-100 p-0">
+                        <span class="modalProductName pb-3">Seleccionar Categorias</span>
+                            <div class="d-flex justify-content-end text-center pb-4 w-100" style="font-size: 1.2rem; ">
+                                <input type="text" class="form-control" placeholder="Buscar..." style="max-width: 300px!important; max-height:50px" id="buscarProducto">
+                            </div>
+                            <div class="main-table w-100">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" style="width:16.666666667%">Nombre</th>
+                                            <th scope="col" style="width:16.666666667%">Acciones</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tableProductos">
+                                        <tr id="1">
+                                            <td>
+                                                <span>Cocoa</span>
+                                            </td>
+                                            <td>
+                                                <button class="btn btn-primary">Agregar</button>
+                                            </td>
+                                        </tr>
+                                        <tr id="2">
+                                            <td>
+                                                <span>Cobertura</span>
+                                            </td>
+                                            <td>
+                                                <button class="btn btn-secondary">Quitar</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>      
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-modalClose" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-modalAcept btnAgregarCarrito">Agregar al Carrito</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <ul class="d-flex flex-column justify-content-start align-items-center side-bar" style="max-width: 224px; min-height: 100vh; margin: 0; transition: width 2s;" id="side-bar-Id">
         <a href="" class="side-bar-brand">
             <img src="Vistas/assets/logoHarricks.png" alt="" style="max-width: 100%">
@@ -25,9 +76,7 @@
             <span>Dashboard</span>
         </li>
         <hr class="divider">
-        <span class="side-bar-title">
-            Ajustes
-            </span>
+            <span class="side-bar-title">Ajustes</span>
         <li class="side-bar-item selected-item link" id="Productos">
             <i class="fa-solid fa-boxes-stacked"></i>
             <span >Productos</span>
@@ -89,7 +138,7 @@
                             </div>
                             <div>
                                 <label>Categorias</label>
-                                <button class="btn btn-primary" type="button">Agregar Categorias</button>
+                                <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#modalAgregarCategoria">Agregar Categorias</button>
                             </div>
                         </div>
                         <div class="d-flex flex-row gap-5 cont-half-form">
@@ -256,5 +305,6 @@
 <script src="https://kit.fontawesome.com/491d7a6bcc.js" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 <script src="Vistas/Dash/Productos/script/script.js"></script>
+<script src="./script/script.js"></script>
 </body>
 </html>

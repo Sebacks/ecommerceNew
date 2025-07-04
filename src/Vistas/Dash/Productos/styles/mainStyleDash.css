@@ -392,22 +392,81 @@ textarea{
 .cont-half-form>div>label{
     font-size: 1.05rem;
 }
-.modal-content{
-    width: fit-content!important;
-}
 .modal-header{
-    justify-content: center!important;
-    border: none!important;
+    background-color: var(--cream-claro-color);
+    color: var(--background-color);
 }
-.modal-footer{
-    justify-content: center!important;
-    border: none!important;
+.modal{
+    background-color: #00000017;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.modal-dialog{
+    max-width: 900px!important;
+}
+.modal-content{
+    background-color: var(--cream-claro-color)!important;
+    height: 500px!important;
+    height: 100%;
+}
+.modalImage{
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background-color);
+    border-radius: 16px;
+}
+.modalText{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left: 20px;
+
+}
+.modalProductName, .modalProductDesc, .modalProductPrice{
+    color: #350800;
+    text-align: center;
+}
+.modalProductName{
+    font-size: 30px;
+    font-weight: bold;
+}
+.modalProductDesc{
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+.modalImage>img{
+    width: 100%;
+    height: auto;    
+
 }
 .modal-body{
-    display: flex!important;
-    flex-direction: column!important;
-    justify-content: center!important;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
     align-items: center;
+    padding-inline: 30px!important;
+}
+.modal-body>div{
+    height: 100%;
+}
+.btn-close{
+    color: var(--background-color)!important;
+}
+.btn-modalClose{
+    color: var(--white-color)!important;
+    background-color: var(--light-chocolate-color)!important;
+}
+.btn-modalAcept{
+    color: var(--white-color)!important;
+    background-color: var(--orange-light-color)!important;
+}
+.modal-footer{
+    background-color: var(--cream-claro-color)!important;
 }
 .btn{
     height: 35px!important;
