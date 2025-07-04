@@ -79,7 +79,38 @@
         .textoGrande{
             font-size: 9vw;
         }
+        .modal-content{
+            width: 80%!important;
+        }
+        .modal-dialog{
+            display: flex!important;
+            justify-content: center!important;
+            align-items: center!important;
+        }
+        .modalImage{
+            aspect-ratio: 1/1!important;
+            width: 40%!important;
+            height: auto!important;
+        }
+        
     }
+    @media  screen and (max-width: 660px){
+        .modalText{
+            height: 50%!important;
+        }
+        .modalProductName{
+            font-size: 25px!important;
+        }
+        .modalProductDesc{
+            font-size: 15px!important;
+        }
+        .modal-body{
+            display: flex;
+            flex-direction: column!important;
+            padding: 0!important;
+        }
+    }
+
 .oscurecer{
     width: 100vw;
     height: 100vh;
@@ -154,10 +185,12 @@
 .modal-body{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     padding-inline: 30px!important;
 }
+
 .modal-body>div{
     height: 100%;
 }
@@ -451,7 +484,7 @@ input[type=number] {
         background-color: var(--cream-claro-color);
     }
     .selected{
-        background-color: var(--background-color-focus);
+        background-color: var(--background-color-focus)!important;
     }
     .singProduCont{
         display: flex;

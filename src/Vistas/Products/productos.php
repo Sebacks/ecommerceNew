@@ -7,6 +7,7 @@
     <title>Harricks</title>
     <link rel="icon" type="image/x-icon" href="Vistas/assets/icon.png">
     <link rel="stylesheet" href="Vistas/Products/styles/productos.css">
+    <link rel="stylesheet" href="./styles/productos.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 </head>
@@ -67,7 +68,7 @@
                 </div>
                 <div class="modal-body" id="textCenterModal">
                     <div class="modalImage">
-                        <img src="Vistas/assets/choco.png" alt="">
+                        <img src="../assets/choco.png" alt="">
                     </div>
                     <div class="modalText">
                         <span class="modalProductName">Pecaditos</span>
@@ -113,32 +114,41 @@
                 <button class="btn-product btn-filtro" data-bs-toggle="modal" data-bs-target="#modalFiltro" style="height:  38px">Filtros</button>
             </div>
             <div class="modal" id="modalFiltro" tabindex="-1" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                        <div class="modal-header">
+                <div class="modal-dialog modal-dialog-centered d-flex justify-content-center align-items-center" >
+                    <div class="modal-content" style="max-width: 90%; max-height: 100%; height: 250px !important;">
+                        <div class="modal-header d-flex justify-content-between">
                             <h5 class="modal-title">Categorias</h5>
                             <button type="button" class="btn fa-solid fa-x" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <div class="modal-body d-flex justify-content-center align-items-center flex-wrap gap-1">
-                            <div class="categoria d-flex justify-content-center align-items-center categoria-clear">
-                                <span>
-                                    Coberturas
-                                </span>
+                        <div class="modal-body gap-3 d-flex justify-content-center align-items-center flex-wrap">
+                            <div class="d-flex gap-1 flex-wrap justify-content-center align-items-center" style="height: auto;">
+                                <div class="categoria d-flex justify-content-center align-items-center"style="height: auto; background-color: #7D411D">
+                                    <span>
+                                        Coberturas
+                                    </span>
+                                </div>
+                                <div class="categoria d-flex justify-content-center align-items-center "style="height: auto; background-color: #7D411D">
+                                    <span>
+                                        Chocolates
+                                    </span>
+                                </div>
                             </div>
-                            <div class="categoria d-flex justify-content-center align-items-center categoria-clear">
-                                <span>
-                                    Chocolates
-                                </span>
-                            </div>
-                            <div class="categoria d-flex justify-content-center align-items-center categoria-clear">
-                                <span>
-                                    Cacao
-                                </span>
+                            <div class="d-flex gap-4 flex-wrap justify-content-center align-items-center" style="height: auto;">
+                                <div class="categoria d-flex justify-content-center align-items-center "style="height: auto; background-color: #7D411D">
+                                    <span>
+                                        Cacao
+                                    </span>
+                                </div>
+                                <div class="categoria d-flex justify-content-center align-items-center "style="height: auto; background-color: #7D411D">
+                                    <span>
+                                        Industrial
+                                    </span>
+                                </div>
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-modal-sec" data-bs-dismiss="modal">Cerrar</button>
-                            <button type="button" class="btn btn-modal-prin">Guardar</button>
+                            <button type="button" class="btn btn-modal-sec btn-modalClose" data-bs-dismiss="modal">Cerrar</button>
+                            <button type="button" class="btn btn-modal-prin btn-modalAcept" data-bs-dismiss="modal">Guardar</button>
                         </div>
                     </div>
                 </div>
@@ -205,5 +215,6 @@
 <script src="https://kit.fontawesome.com/491d7a6bcc.js" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 <script src="Vistas/Products/scripts/script.js"></script>
+<script src="./scripts/script.js"></script>
 </body>
 </html>
