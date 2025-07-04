@@ -30,7 +30,7 @@
                                 <input type="text" class="form-control" placeholder="Buscar..." style="max-width: 300px!important; max-height:50px" id="buscarProducto">
                             </div>
                             <div class="main-table w-100">
-                                <table class="table">
+                                <table class="table" style="max-height:300px;overflow:scroll">
                                     <thead>
                                         <tr>
                                             <th scope="col" style="width:16.666666667%">Nombre</th>
@@ -38,14 +38,19 @@
                                         </tr>
                                     </thead>
                                     <tbody id="tableProductos">
-                                        <tr id="1">
+                                        <?php
+                                        foreach ($todosCat as $cat)
+                                        {
+                                            if ($cat->getEstado())?>
+                                        <tr id="<?php echo $cat->getId() ?>">
                                             <td>
-                                                <span>Cocoa</span>
+                                                <span><?php echo $cat->getNombre() ?></span>
                                             </td>
                                             <td>
                                                 <button class="btn btn-primary">Agregar</button>
                                             </td>
                                         </tr>
+                                        <?php}}?>
                                         <tr id="2">
                                             <td>
                                                 <span>Cobertura</span>
