@@ -116,12 +116,11 @@ class ProductoM
         $conexion->Cerrar();
         return $retVal;
     }
-    function Desactivar(Producto $e)
+    function Activar(Producto $e)
     {
-        $e->estado=0;
         $retVal=false;
         $conexion = new Conexion();
-        $sql="UPDATE PRODUCTO SET ESTADO='".$e->estado."' WHERE ID='".$e->getId()."'";
+        $sql="UPDATE PRODUCTO SET ESTADO='".$e->getEstado()."' WHERE ID='".$e->getId()."'";
         if($conexion->Ejecutar($sql))
             $retVal=true;
         $conexion->Cerrar();

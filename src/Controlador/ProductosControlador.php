@@ -4,6 +4,7 @@
     require_once 'Modelo/Entidades/Producto.php';
     require_once 'Modelo/Metodos/CategoriaM.php';
     require_once 'Modelo/Entidades/Categoria.php';
+    require_once 'Controlador/DashControlador.php';
     require_once 'Modelo/Conexion.php';
 
 
@@ -37,14 +38,16 @@ class ProductosControlador
         $pM->Crear($p);
         $this->Index();
     }
-    function Desactivar(){
+    function Activar(){
         $p=new Producto();
-        if($_POST['ID']!=null){
-            $p->setID($_POST['ID']);
+        if($_POST['id']!=null){
+            $p->setID($_POST['id']);
         }
+        $p->setEstado($_POST['estado']);
         $pM = new ProductoM();
-        $pM->Desactivar($p);
-        $this->Index();
+        $pM->Activar($p);
+        $dp = new DashControlador();
+        $dp->ProductosDash();
     }
     function Buscar()
     {

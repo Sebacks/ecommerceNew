@@ -101,9 +101,12 @@
                                 <label for="localidadInput">Localidad</label>
                                 <select class="form-control" name="localidad" id="localidadInput" tabindex="6" >
                                     <option disabled value="-1" selected>Seleccione una opcion</option>
-                                    <option>x</option>
-                                    <option>x</option>
-                                    <option>x</option>
+                                    <?php
+                                    foreach ($todosLoc as $loc)
+                                    { ?>
+                                    <option value="<?php echo $loc->getId(); ?>"><?php echo $loc->getNombre(); ?></option>
+                                    <?php
+                                    } ?>
                                 </select>
                             </div>
                         </div>
@@ -164,27 +167,41 @@
                             </tr>
                         </thead>
                         <tbody id="tableProductos">
-                            <tr id="Cocoa natural 500gr">
+                            <?php
+                            foreach ($todosProd as $prod){?>
+                            <tr id="<?php echo $prod->getId() ?>">
                                 <td>
-                                    <span>Cocoa natural 500gr</span>
+                                    <span><?php echo $prod->getNombre() ?></span>
                                 </td>
                                 <td>
-                                    <span>Deliciosa cobertura de chocolate preparada con la mejor calidad</span>
+                                    <span><?php echo $prod->getDescripcion() ?></span>
                                 </td>
                                 <td>
-                                    <span>CRC4700</span>
+                                    <span>CRC<span><?php echo $prod->getPrecio() ?></span></span>
                                 </td>
                                 <td>
-                                    <span>6500<span> Unidades</span></span>
+                                    <span><?php echo $prod->getCantDisponible() ?><span> Unidades</span></span>
                                 </td>
                                 <td>
-                                    <span>20/10/2024</span>
+                                    <span><?php echo (new DateTime($prod->getFechaCreacion()))->format("d/m/Y") ?></span>
                                 </td>
                                 <td>
                                     <button class="btn btn-primary editBtn">Editar</button>
-                                    <button class="btn btn-success activateBtn">Activar</button>
+                                    <?php
+                                    if ($prod->getEstado())
+                                    { 
+                                    ?>
+                                        <button class="btn btn-danger deactivateBtn" data-bs-toggle="modal" data-bs-target="#desactivarProductoModal">Desactivar</button>
+                                    <?php
+                                    }
+                                    else
+                                    {?>
+                                        <button class="btn btn-success activateBtn" data-bs-toggle="modal" data-bs-target="#desactivarProductoModal">Activar</button>
+                                    <?php
+                                    }?>
                                 </td>
                             </tr>
+                            <?php } ?>
                             <tr id="Cobertura de chocolate 70%">
                                 <td>
                                     <span>Cobertura de chocolate 70%</span>
@@ -223,8 +240,12 @@
                     <span>Esta accion se puede revertir luego</span>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-primary">Confirmar</button>
+                    <form action="./index.php?c=Productos&a=Activar" method="post">
+                        <input type="hidden" name="id" id="idInputModal">
+                        <input type="hidden" name="estado" id="estadoInputModal">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-primary">Confirmar</button>
+                    </form>
                 </div>
             </div>
         </div>

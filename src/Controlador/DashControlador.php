@@ -13,7 +13,7 @@ class DashControlador
         $pM=new ProductoM();
         $cM=new CategoriaM();
         $lM=new LocalidadM();
-        $todos = $pM->BuscarTodos();
+        $todosProd = $pM->BuscarTodos();
         $todosCat = $cM->BuscarTodos();
         $todosLoc = $lM->BuscarTodos();
         require_once 'Vistas/Dash/Productos/index.php';

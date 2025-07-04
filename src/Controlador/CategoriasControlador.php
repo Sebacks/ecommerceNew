@@ -41,7 +41,6 @@ class CategoriasControlador
         $pM = new ProductoM();
         return $pM->Buscar($_POST["id"]);
     }
-    //($id,$nombre,$cantidadDisponible,$descripcion,$localidad,$urlImagen,$hasDescuento,$precio,$descuento
     function Prueba()
     {
         echo "<script>alert(':3') </script>";

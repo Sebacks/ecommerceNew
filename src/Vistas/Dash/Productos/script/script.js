@@ -79,6 +79,7 @@ $(document).ready(function() {
         $('#btnSwitchS').text(text)
     })
 
+    /*
     radioTrue.addEventListener("change", function() {
         if (radioTrue.checked) {
             $("#descuentoInputCont").removeClass('d-none');
@@ -91,12 +92,14 @@ $(document).ready(function() {
         }
     });
 
+    */
     $('#descuentoInput').on('input', function (){
         $('#porcentajeShow').text($('#descuentoInput').val()+"%")
     })
     
     /*Reemplaza la ventana actual cargando el producto seleccionado en el form de agregar*/
     $('.editBtn').click(function(event){
+        var id = event.target.parentElement.parentElement.id
         var id = event.target.parentElement.parentElement.id
         $('#main-table').toggleClass("d-none");
         $('#add-products').toggleClass("d-none");
@@ -112,5 +115,21 @@ $(document).ready(function() {
         $('#btnSwitchS').toggleClass('btn-primary');
         $('#btnSwitchS').toggleClass('btn-secondary');
         $('#btnSwitchS').text(text);
+    });
+    $('.deactivateBtn').click(function(event){
+        var id = event.target.parentElement.parentElement.id;
+        nuevoBody = '<span>¿Esta seguro que desea desactivar el producto?</span>';
+        nuevoBody += '<span class="text-center">Esta accion se puede revertir luego</span>';
+        $('.modal-body')[0].innerHTML = nuevoBody
+        $('#idInputModal').val(id)
+        $('#estadoInputModal').val("0")
+    });
+    $('.activateBtn').click(function(event){
+        var id = event.target.parentElement.parentElement.id;
+        nuevoBody = '<span>¿Esta seguro que desea volver a activar el producto?</span>';
+        nuevoBody += '<span class="text-center">Esta accion se puede revertir luego</span>';
+        $('.modal-body')[0].innerHTML = nuevoBody
+        $('#idInputModal').val(id)
+        $('#estadoInputModal').val("1")
     });
 });

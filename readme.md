@@ -1,4 +1,8 @@
 # Changelog
+## v0.4.6 beta
+    * Se incrementó el tamaño de "coordenadas" en la tabla LOCALIDAD, ahora es VARCHAR(40)
+    * Santi cameo
+
 ## v0.4.5
     * Se completó el crud de Categoría
     * Se realizaron cambios en CategoriaM y en CategoriaControlador
