@@ -40,25 +40,7 @@
         </div>
         <div class="offcanvas-body">
            <ul class="listaCarrito" id="listaCarritoID">
-                <li class="sideMenuMealItem" id="1">
-                    <div class="contLeft">
-                        <div class="contImg">
-                            <img src="../assets/choco.png" alt="">
-                        </div>
-                        <div class="contName">
-                            <span>Pecaditos 250gr</span>
-                            <div>
-                                <button class="decrementSideMenu">-</button>
-                                <input type="number" class="inputSideMenu">
-                                <button class="incrementSideMenu">+</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="priceCont">
-                        <button type="button" class="btn-close text-reset mx-0" aria-label="Close"></button>
-                        <span>CRC3950</span>
-                    </div>
-                </li>
+                
            </ul>
            <div class="abajoCarrito d-flex gap-2">
                 <div class="subtotalCarrito">
